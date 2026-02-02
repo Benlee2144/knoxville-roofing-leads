@@ -29,7 +29,7 @@
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Schema.org Markup -->
+    <!-- Schema.org Markup - Website -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -37,13 +37,84 @@
         "name": "Knoxville Roofing Quotes",
         "description": "Free roofing quote comparison service connecting Knoxville homeowners with top-rated local contractors.",
         "url": "https://knoxvilleroofingquotes.com",
-        "areaServed": {
-            "@type": "City",
-            "name": "Knoxville",
-            "containedIn": "Tennessee"
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://knoxvilleroofingquotes.com/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
         }
     }
     </script>
+
+    <!-- Schema.org Markup - Local Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Roofing Quote Comparison Service",
+        "name": "Free Roofing Quotes - Knoxville, TN",
+        "description": "Compare free quotes from licensed, insured roofing contractors in Knoxville, Tennessee. Get up to 3 estimates for roof repair, replacement, and storm damage.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Knoxville Roofing Quotes",
+            "url": "https://knoxvilleroofingquotes.com"
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Knoxville", "containedIn": "Tennessee"},
+            {"@type": "City", "name": "Farragut", "containedIn": "Tennessee"},
+            {"@type": "City", "name": "Maryville", "containedIn": "Tennessee"},
+            {"@type": "City", "name": "Oak Ridge", "containedIn": "Tennessee"},
+            {"@type": "City", "name": "Powell", "containedIn": "Tennessee"},
+            {"@type": "City", "name": "Lenoir City", "containedIn": "Tennessee"}
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Roofing Services",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Roof Repair Quotes"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Roof Replacement Quotes"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Storm Damage Repair Quotes"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Roof Inspection Quotes"}}
+            ]
+        }
+    }
+    </script>
+
+    <!-- Schema.org Markup - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does a new roof cost in Knoxville, TN?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The average cost of a new roof in Knoxville ranges from $8,000 to $25,000 depending on size, materials, and complexity. Getting multiple quotes can save you up to 40% on your roofing project."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this quote service really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our service is 100% free for homeowners. We connect you with up to 3 licensed, insured roofing contractors who provide free estimates. There's no obligation to hire."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does it take to get roofing quotes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most homeowners receive quotes within 24-48 hours of submitting their request. For emergency repairs, contractors often respond the same day."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://knoxvilleroofingquotes.com/" />
 </head>
 <body>
     <!-- Urgency Banner -->
@@ -462,6 +533,42 @@
                 <div class="area-tag">Maryville</div>
                 <div class="area-tag">Lenoir City</div>
                 <div class="area-tag">Seymour</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">COMMON QUESTIONS</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How much does a new roof cost in Knoxville, TN?</h3>
+                    <p>The average cost of a new roof in Knoxville ranges from <strong>$8,000 to $25,000</strong> depending on the size of your home, materials chosen, and complexity of the job. Asphalt shingles are the most affordable option, while metal and tile roofs cost more but last longer. Getting multiple quotes can save you up to 40% on your roofing project.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is this roofing quote service really free?</h3>
+                    <p>Yes, our service is <strong>100% free for homeowners</strong>. We connect you with up to 3 licensed, insured roofing contractors in Knoxville who will provide free estimates. There's absolutely no obligation to hire anyone. Contractors pay us a small fee for the connection, so you pay nothing.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How quickly will I receive quotes?</h3>
+                    <p>Most homeowners receive quotes within <strong>24-48 hours</strong> of submitting their request. For emergency repairs like active leaks or storm damage, contractors often respond the same day. The more details you provide about your project, the faster and more accurate your quotes will be.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I know if I need a roof repair or full replacement?</h3>
+                    <p>Signs you may need a <strong>repair</strong>: a few missing shingles, minor leaks, or localized damage. Signs you may need a <strong>replacement</strong>: roof is 20+ years old, widespread damage, sagging, multiple leaks, or visible daylight through the roof. Our contractors provide free inspections to help you decide.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Will my homeowners insurance cover roof damage?</h3>
+                    <p>Most homeowners insurance policies cover roof damage caused by <strong>sudden events like storms, hail, fallen trees, or fire</strong>. However, damage from normal wear and tear or lack of maintenance typically isn't covered. Many Knoxville contractors in our network specialize in insurance claims and can help maximize your coverage.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What roofing materials are best for Tennessee weather?</h3>
+                    <p><strong>Asphalt shingles</strong> are the most popular choice in Knoxville due to their affordability and durability against our hot summers and occasional storms. <strong>Metal roofing</strong> is gaining popularity for its 50+ year lifespan and energy efficiency. <strong>Architectural shingles</strong> offer a balance of aesthetics and performance.</p>
+                </div>
             </div>
         </div>
     </section>

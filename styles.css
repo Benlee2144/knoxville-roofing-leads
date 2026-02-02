@@ -1404,3 +1404,65 @@ body {
 .testimonials-grid .testimonial-card:nth-child(1) { transition-delay: 0.1s; }
 .testimonials-grid .testimonial-card:nth-child(2) { transition-delay: 0.2s; }
 .testimonials-grid .testimonial-card:nth-child(3) { transition-delay: 0.3s; }
+
+/* =============================================
+   FAQ SECTION
+   ============================================= */
+
+.faq-section {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.faq-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.faq-item h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.faq-item p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.faq-item p strong {
+    color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .faq-section {
+        padding: 60px 0;
+    }
+    
+    .faq-item {
+        padding: 25px;
+    }
+}
