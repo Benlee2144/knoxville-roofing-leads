@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none">
+  <!-- Roof shape -->
+  <path d="M25 8L5 24h6v14h28V24h6L25 8z" fill="#1e3a5f"/>
+  <!-- Roof outline/shingles -->
+  <path d="M25 8L5 24h6v14h28V24h6L25 8z" stroke="#2d6a4f" stroke-width="1.5" fill="none"/>
+  <!-- Chimney -->
+  <rect x="32" y="14" width="5" height="10" fill="#1e3a5f"/>
+  <!-- Window -->
+  <rect x="21" y="28" width="8" height="10" fill="#e63946" rx="1"/>
+  <!-- Window panes -->
+  <line x1="25" y1="28" x2="25" y2="38" stroke="#1e3a5f" stroke-width="1"/>
+  <line x1="21" y1="33" x2="29" y2="33" stroke="#1e3a5f" stroke-width="1"/>
+  <!-- Checkmark badge -->
+  <circle cx="40" cy="38" r="8" fill="#2d6a4f"/>
+  <path d="M36 38l3 3 5-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
