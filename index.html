@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compare FREE roofing quotes from top-rated Knoxville contractors. Storm damage? Leaks? Get up to 3 estimates from licensed, insured roofers. No obligation!">
+    <meta name="description" content="Compare FREE roofing quotes from top-rated Knoxville contractors. Residential & commercial roofing - storm damage, leaks, flat roofs. Get up to 3 estimates from licensed, insured roofers. No obligation!">
     <meta name="keywords" content="Knoxville roof repair, Knoxville roofing quotes, roof inspection Knoxville TN, storm damage roof repair, roofing contractors Knoxville, compare roofing estimates">
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="US-TN">
@@ -218,12 +218,21 @@
                             <label for="issue">What Do You Need?</label>
                             <select id="issue" name="issue" required>
                                 <option value="">Select your project...</option>
-                                <option value="storm-damage">Storm / Hail Damage Repair</option>
-                                <option value="leak">Roof Leak Repair</option>
-                                <option value="missing-shingles">Missing Shingles</option>
-                                <option value="full-replacement">Full Roof Replacement</option>
-                                <option value="inspection">Free Inspection / Assessment</option>
-                                <option value="insurance">Insurance Claim Help</option>
+                                <optgroup label="Residential">
+                                    <option value="storm-damage">Storm / Hail Damage Repair</option>
+                                    <option value="leak">Roof Leak Repair</option>
+                                    <option value="missing-shingles">Missing Shingles</option>
+                                    <option value="full-replacement">Full Roof Replacement</option>
+                                    <option value="inspection">Free Inspection / Assessment</option>
+                                    <option value="insurance">Insurance Claim Help</option>
+                                </optgroup>
+                                <optgroup label="Commercial">
+                                    <option value="commercial-flat-roof">Flat Roof Repair/Replacement</option>
+                                    <option value="commercial-membrane">TPO/EPDM/PVC Membrane</option>
+                                    <option value="commercial-metal">Commercial Metal Roofing</option>
+                                    <option value="commercial-maintenance">Maintenance Contract</option>
+                                    <option value="commercial-inspection">Commercial Inspection</option>
+                                </optgroup>
                                 <option value="other">Other Roofing Service</option>
                             </select>
                         </div>
@@ -238,12 +247,23 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="homeowner">Are You the Homeowner? *</label>
+                            <label for="property_type">Property Type *</label>
+                            <select id="property_type" name="property_type" required>
+                                <option value="">Select property type...</option>
+                                <option value="residential">Residential Home</option>
+                                <option value="commercial">Commercial Building</option>
+                                <option value="multi-family">Multi-Family / Apartment</option>
+                                <option value="industrial">Industrial / Warehouse</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="homeowner">Are You the Property Owner? *</label>
                             <select id="homeowner" name="homeowner" required>
                                 <option value="">Select...</option>
                                 <option value="yes">Yes, I own this property</option>
-                                <option value="no">No, I'm a renter</option>
+                                <option value="no">No, I'm a renter/tenant</option>
                                 <option value="agent">I'm a property manager/agent</option>
+                                <option value="business-owner">I'm the business owner/lessee</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -406,6 +426,45 @@
                     <div class="service-icon">🏠</div>
                     <h3>Gutter Services</h3>
                     <p>Installation, repair, and cleaning quotes available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Roofing Section -->
+    <section class="commercial-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">BUSINESS OWNERS</span>
+                <h2 class="section-title">Commercial Roofing <span class="text-primary">for Knoxville Businesses</span></h2>
+                <p class="section-subtitle">Flat roofs, TPO, EPDM, metal — get quotes from commercial roofing specialists</p>
+            </div>
+            <div class="commercial-content">
+                <div class="commercial-text">
+                    <h3>We Connect Business Owners with Commercial Roofing Experts</h3>
+                    <p>Commercial roofs have different needs than residential homes. Our network includes contractors who specialize in:</p>
+                    <ul class="commercial-list">
+                        <li><strong>Flat Roof Systems</strong> — TPO, EPDM, PVC, and modified bitumen</li>
+                        <li><strong>Metal Roofing</strong> — Standing seam and commercial-grade panels</li>
+                        <li><strong>Roof Coatings</strong> — Extend your roof's life without full replacement</li>
+                        <li><strong>Maintenance Contracts</strong> — Preventive care to avoid costly repairs</li>
+                        <li><strong>Emergency Repairs</strong> — Fast response to minimize business disruption</li>
+                    </ul>
+                    <div class="commercial-types">
+                        <span>Retail Stores</span>
+                        <span>Office Buildings</span>
+                        <span>Warehouses</span>
+                        <span>Restaurants</span>
+                        <span>Medical Facilities</span>
+                        <span>Churches</span>
+                        <span>Multi-Family</span>
+                        <span>Industrial</span>
+                    </div>
+                </div>
+                <div class="commercial-cta-box">
+                    <h4>Get Commercial Roofing Quotes</h4>
+                    <p>Same free service, specialized contractors for your business property.</p>
+                    <a href="#quote" class="btn-primary">Get Free Commercial Quotes →</a>
                 </div>
             </div>
         </div>
