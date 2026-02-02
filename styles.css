@@ -490,6 +490,43 @@ body {
     color: var(--text-light);
 }
 
+/* Checkbox styling */
+.checkbox-group {
+    margin-top: 15px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-medium);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+}
+
+.checkbox-text {
+    flex: 1;
+}
+
+.checkbox-text a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.checkbox-text a:hover {
+    color: var(--accent);
+}
+
 /* =============================================
    SOCIAL PROOF BAR
    ============================================= */
