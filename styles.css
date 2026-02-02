@@ -1220,6 +1220,10 @@ body {
     color: white;
 }
 
+.commercial-section .section-title .text-primary {
+    color: #4ade80;
+}
+
 .commercial-section .section-subtitle {
     color: rgba(255,255,255,0.85);
 }
