@@ -24,6 +24,10 @@ BRAND = 'Knoxville Roofing Quotes'
 GA_ID = 'G-RPJS68684E'
 ADSENSE = 'ca-pub-5819445292295786'
 FORMSPREE = 'https://formspree.io/f/xdeawzlj'
+CONTACT_NAME = 'Ben Arp'
+PHONE_DISPLAY = '(423) 920-4333'
+PHONE_TEL = '+14239204333'
+SMS_HREF = f'sms:{PHONE_TEL}?&body=' + 'Hi%20Ben%2C%20I%20need%20help%20with%20my%20roof.%20My%20ZIP%20is%20'
 TODAY = date.today().isoformat()
 YEAR = date.today().year
 
@@ -84,6 +88,8 @@ ICONS = {
     'clock': '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
     'menu': '<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>',
     'x-circle': '<circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/>',
+    'phone': '<path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>',
+    'message': '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
 }
 
 
@@ -186,11 +192,13 @@ def head(title, description, path, *, schema=(), og_type='website', noindex=Fals
 
 
 NAV = [('/roof-replacement/', 'Roof Replacement'), ('/storm-damage-roof-repair/', 'Storm Damage'),
-       ('/service-areas/', 'Service Areas'), ('/roof-cost-calculator/', 'Cost Calculator'), ('/blog/', 'Guides')]
+       ('/service-areas/', 'Service Areas'), ('/roof-cost-calculator/', 'Cost Calculator')]
+MOBILE_NAV = NAV + [('/blog/', 'Homeowner Guides'), ('/contact/', 'Contact')]
 
 
 def header(cta_href='#quote'):
     links = '\n'.join(f'                    <a href="{h}">{t}</a>' for h, t in NAV)
+    mobile_links = '\n'.join(f'                        <a href="{h}">{t}</a>' for h, t in MOBILE_NAV)
     return f'''    <!-- shared:header -->
     <header class="header">
         <div class="container header-content">
@@ -205,11 +213,14 @@ def header(cta_href='#quote'):
 {links}
             </nav>
             <div class="header-right">
+                <a href="tel:{PHONE_TEL}" class="header-phone" aria-label="Call or text {PHONE_DISPLAY}">{icon('phone')}<span>{PHONE_DISPLAY}</span></a>
                 <a href="{cta_href}" class="btn-primary header-cta">Get Free Quotes</a>
                 <details class="mobile-nav">
                     <summary aria-label="Menu">{icon('menu')}</summary>
                     <div class="mobile-nav-panel">
-{links}
+{mobile_links}
+                        <a href="tel:{PHONE_TEL}" class="mobile-nav-phone">{icon('phone')}Call {PHONE_DISPLAY}</a>
+                        <a href="{SMS_HREF}" class="mobile-nav-phone">{icon('message')}Text {PHONE_DISPLAY}</a>
                     </div>
                 </details>
             </div>
@@ -234,6 +245,7 @@ def footer():
                         </div>
                     </a>
                     <p class="footer-description">A free service that connects East Tennessee homeowners and businesses with up to 3 licensed, insured local roofing contractors. No cost, no obligation.</p>
+                    <p class="footer-phone">Questions? Call or text {CONTACT_NAME}:<br><a href="tel:{PHONE_TEL}">{icon('phone')}{PHONE_DISPLAY}</a></p>
                     <a href="/#quote" class="btn-primary">Get Free Quotes</a>
                 </div>
                 <div class="footer-col">
@@ -266,10 +278,19 @@ def footer():
     <!-- /shared:footer -->'''
 
 
-def floating_cta():
-    return '''    <div class="floating-cta">
-        <a href="#quote" class="floating-btn">Get Free Quotes</a>
-    </div>'''
+def floating_cta(quote_href='#quote'):
+    return f'''    <!-- shared:floating -->
+    <div class="floating-cta">
+        <a href="tel:{PHONE_TEL}" class="floating-action" data-loc="floating">{icon('phone')}<span>Call</span></a>
+        <a href="{SMS_HREF}" class="floating-action" data-loc="floating">{icon('message')}<span>Text</span></a>
+        <a href="{quote_href}" class="floating-btn">Get Free Quotes</a>
+    </div>
+    <!-- /shared:floating -->'''
+
+
+def hero_phone():
+    return (f'                <!-- shared:herophone -->\n                <p class="hero-phone">Prefer to talk? Call or text {CONTACT_NAME} at '
+            f'<a href="tel:{PHONE_TEL}" data-loc="hero">{PHONE_DISPLAY}</a></p>\n                <!-- /shared:herophone -->')
 
 
 def scripts():
@@ -445,6 +466,7 @@ def hero(badge, h1, subtitle, features, form_html, extra_class=''):
                 <div class="hero-features">
 {feats}
                 </div>
+{hero_phone()}
             </div>
 {form_html}
         </div>
@@ -478,6 +500,8 @@ GENERAL_FAQS = [
      'a': 'Yes. Homeowners never pay us anything. Roofing contractors in our network pay a referral fee, and you are under no obligation to hire any of them.'},
     {'q': 'How many roofers will contact me?',
      'a': 'Up to 3. We match your request with local, licensed and insured roofers who handle your type of project, so you can compare quotes without calling around.'},
+    {'q': 'Can I call or text instead of filling out the form?',
+     'a': f'Yes. Call or text {CONTACT_NAME} at {PHONE_DISPLAY} with your address and what is going on with your roof, and your request will be passed to local roofers who serve your area. If no one picks up, leave a voicemail or send a text.'},
 ]
 
 
@@ -586,6 +610,10 @@ def org_schema():
         '@context': 'https://schema.org', '@type': 'Organization', 'name': BRAND, 'url': SITE + '/',
         'logo': SITE + '/images/apple-touch-icon.png',
         'description': 'Free roofing quote referral service for Knoxville and East Tennessee.',
+        'telephone': PHONE_TEL,
+        'founder': {'@type': 'Person', 'name': CONTACT_NAME},
+        'contactPoint': {'@type': 'ContactPoint', 'telephone': PHONE_TEL, 'contactType': 'customer service',
+                         'areaServed': 'US-TN', 'availableLanguage': 'English'},
         'areaServed': ['Knoxville, TN'] + [LOC[c]['full_name'] for c in COUNTY_ORDER if c in LOC],
     }
 
@@ -798,6 +826,7 @@ def simple_page(path, title, description, h1, intro, body_html, *, crumbs=None, 
         body_html,
         cta_band() if cta else '',
         footer(),
+        floating_cta('/#quote'),
         scripts(),
     ]
     write(path.strip('/') + '/index.html' if path != '/404.html' else '404.html', '\n'.join(p for p in page if p))
@@ -937,6 +966,7 @@ def blog_post(p):
     </section>''',
         cta_band(f'Need {SERVICE_NAMES.get(svc, "roofing").lower()} quotes?' if svc in SERVICE_NAMES else None),
         footer(),
+        floating_cta(f'/{svc}/#quote'),
         scripts(),
     ]
     write(f'blog/{slug}/index.html', '\n'.join(x for x in page if x))
@@ -961,6 +991,8 @@ HOME_FAQS = [
      'a': 'Architectural asphalt shingles are the most popular choice in East Tennessee because they balance cost and durability. Metal roofing is growing in popularity for its long lifespan and energy efficiency, especially on cabins and rural homes. Flat commercial roofs usually use TPO or EPDM.'},
     {'q': 'How do I check that a roofer is licensed in Tennessee?',
      'a': 'Search the contractor on the State of Tennessee license lookup at verify.tn.gov. Roofing jobs of $25,000 or more require a state contractor license, and in Knox County residential jobs from $3,000 to $24,999 require a state Home Improvement license. Also ask for proof of liability insurance sent directly from their agent.'},
+    {'q': 'Can I talk to a person instead of filling out the form?',
+     'a': f'Yes. Call or text {CONTACT_NAME} at {PHONE_DISPLAY}. Share your address and what is going on with your roof, and your request will be passed to local roofers who serve your area. If no one picks up, leave a voicemail or send a text.'},
     {'q': 'Which areas do you serve?',
      'a': 'Knoxville and the surrounding East Tennessee counties, including Knox, Blount, Anderson, Loudon, Sevier, Jefferson, Roane, Union, Grainger, Campbell and Morgan. See our service areas page for every town we cover.'},
 ]
@@ -1006,6 +1038,8 @@ def refresh_shared(rel_path, form_args=None, home=False):
         blocks['services'] = services_grid().replace('class="services-links-section"', 'class="services-links-section" id="services"')
         blocks['areas'] = areas_block()
         blocks['orgschema'] = jsonld(org_schema())
+        blocks['floating'] = floating_cta()
+        blocks['herophone'] = hero_phone()
         blocks['costs'] = cost_snapshot('Knoxville', image='shingle-before-after',
                                         caption='Illustration: weathered, streaked shingles compared with new architectural shingles.')
     for name, content in blocks.items():

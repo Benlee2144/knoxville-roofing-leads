@@ -226,6 +226,8 @@ def build(g):
                 <li>Get every price, material and warranty in writing.</li>
                 <li>Never pay a large deposit to someone who just knocked on your door after a storm.</li>
             </ul>
+            <h2>Talk to a person</h2>
+            <p>Prefer the phone? Call or text {g['CONTACT_NAME']} at <a href="tel:{g['PHONE_TEL']}">{g['PHONE_DISPLAY']}</a>. Share your address and what's going on with your roof, and your request will be passed to local roofers who serve your area.</p>
             <h2>Your information</h2>
             <p>We share your request only with the contractors matched to your project. We don't sell your information to marketing lists. You can ask us to stop contacting you or delete your information at any time through our <a href="/contact/">contact page</a>. See our <a href="/privacy/">privacy policy</a> for details.</p>
         </div>
@@ -265,7 +267,7 @@ def build(g):
             <h2>Changes</h2>
             <p>We may update this policy. The effective date at the top shows when it last changed.</p>
             <h2>Contact</h2>
-            <p>Questions about this policy? Reach us through our <a href="/contact/">contact page</a>.</p>
+            <p>Questions about this policy? Call or text {g['CONTACT_NAME']} at <a href="tel:{g['PHONE_TEL']}">{g['PHONE_DISPLAY']}</a>, or reach us through our <a href="/contact/">contact page</a>.</p>
         </div>
     </section>'''
     simple_page('/privacy/', f'Privacy Policy | {brand}', f'How {brand} collects, uses and shares information, including cookies, Google Analytics, Google AdSense and quote requests.',
@@ -290,7 +292,7 @@ def build(g):
             <h2>Governing law</h2>
             <p>These terms are governed by the laws of the State of Tennessee.</p>
             <h2>Contact</h2>
-            <p>Questions? Reach us through our <a href="/contact/">contact page</a>.</p>
+            <p>Questions? Call or text {g['CONTACT_NAME']} at <a href="tel:{g['PHONE_TEL']}">{g['PHONE_DISPLAY']}</a>, or reach us through our <a href="/contact/">contact page</a>.</p>
         </div>
     </section>'''
     simple_page('/terms/', f'Terms of Use & Consent | {brand}', f'Terms of use for {brand}, including our consent to be contacted by roofing contractors and our role as a free referral service.',
@@ -309,6 +311,12 @@ def build(g):
                     <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <button type="submit" class="submit-btn"><span class="btn-text">Send Message</span></button>
                 </form>
+                <div class="aside-card contact-card">
+                    <h3>Call or text {g['CONTACT_NAME']}</h3>
+                    <p>The quickest way to reach us.</p>
+                    <a href="tel:{g['PHONE_TEL']}" class="contact-line">{icon('phone')}{g['PHONE_DISPLAY']}</a>
+                    <a href="{g['SMS_HREF']}" class="contact-line">{icon('message')}Send a text</a>
+                </div>
                 <div class="aside-card">
                     <h3>Looking for roofing quotes?</h3>
                     <p>The fastest way to get help with your roof is our quote form. It goes straight to local roofers who serve your area.</p>
@@ -318,7 +326,7 @@ def build(g):
         </div>
     </section>'''
     simple_page('/contact/', f'Contact Us | {brand}', f'Contact {brand} with questions about our free roofing quote service, your information, or partnering as a roofing contractor.',
-                'Contact Us', 'Questions about the service, your information, or joining our contractor network? Send us a note.', contact, cta=False)
+                'Contact Us', f'Questions about the service, your information, or joining our contractor network? Call or text {g["CONTACT_NAME"]} at {g["PHONE_DISPLAY"]}, or send a note below.', contact, cta=False)
 
     # ------------------------------------------------------------------ 404
     links = ''.join(f'<a class="area-link" href="{h}">{t}</a>' for h, t in g['NAV'])
@@ -337,6 +345,7 @@ def build(g):
                 <div class="thank-you-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
                 <h1>You're all set</h1>
                 <p class="thank-you-lead">We received your request. Keep your phone handy: local roofers usually reach out within 24-48 hours, often sooner for emergencies.</p>
+                <p class="thank-you-contact">Haven't heard back in 48 hours, or have a question? Call or text {g['CONTACT_NAME']} at <a href="tel:{g['PHONE_TEL']}">{g['PHONE_DISPLAY']}</a>.</p>
                 <ol class="next-steps">
                     <li><span class="next-step-icon">{icon('phone-call')}</span><div><strong>Answer unknown 865 numbers</strong><p>Roofers may call or text from numbers you don't recognize. A quick call is the fastest way to book your free inspection.</p></div></li>
                     <li><span class="next-step-icon">{icon('clipboard-check')}</span><div><strong>Get written estimates</strong><p>Ask each roofer for an itemized quote covering materials, tear-off, and warranty so you can compare fairly.</p></div></li>

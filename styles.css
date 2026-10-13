@@ -3396,3 +3396,198 @@ a.area-link:hover {
     flex-shrink: 0;
     white-space: nowrap;
 }
+
+/* =============================================
+   PHONE / TEXT CONTACT
+   ============================================= */
+
+.header .container {
+    max-width: 1320px;
+}
+
+.header-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.header-phone .icon {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
+}
+
+.header-phone:hover {
+    color: var(--accent);
+}
+
+.mobile-nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary) !important;
+    font-weight: 700 !important;
+    border-top: 1px solid #eef0f3;
+}
+
+.mobile-nav-phone + .mobile-nav-phone {
+    border-top: 0;
+}
+
+.mobile-nav-phone .icon {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
+}
+
+.hero-phone {
+    margin-top: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+}
+
+.hero-phone a {
+    color: var(--white);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.footer-phone {
+    margin-top: 14px;
+    line-height: 1.7;
+}
+
+.footer-phone a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white) !important;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.footer-phone .icon {
+    width: 18px;
+    height: 18px;
+    color: #f77f00;
+}
+
+.thank-you-contact {
+    margin: -16px 0 28px;
+    color: var(--text-medium);
+}
+
+.thank-you-contact a,
+.prose a[href^="tel:"] {
+    color: var(--primary);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.contact-card .contact-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.contact-card .contact-line .icon {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+}
+
+.contact-layout > .aside-card + .aside-card,
+.contact-layout .contact-card {
+    margin-bottom: 20px;
+}
+
+/* Mobile bottom bar: Call / Text / Get Quotes */
+.floating-cta {
+    gap: 8px;
+    padding: 10px 12px;
+}
+
+.floating-action {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    width: 64px;
+    padding: 6px 0;
+    border: 2px solid #e3e7ed;
+    border-radius: var(--radius-sm);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.floating-action .icon {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+}
+
+.floating-cta .floating-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 10px;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+    .floating-cta {
+        display: flex;
+    }
+}
+
+@media (max-width: 1280px) {
+    .site-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .header-right {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-phone {
+        width: 44px;
+        height: 44px;
+        justify-content: center;
+        border-radius: var(--radius-sm);
+        background: rgba(230, 57, 70, 0.08);
+    }
+
+    .header-phone span {
+        display: none;
+    }
+
+    .header-phone .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .header-right {
+        gap: 6px;
+    }
+}

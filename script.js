@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFloatingCta();
     initThankYouTracking();
     initCostCalculator();
+    initContactTracking();
 });
 
 // =============================================
@@ -310,4 +311,18 @@ function initCostCalculator() {
     card.addEventListener('input', () => update(true));
     card.addEventListener('change', () => update(true));
     update(false);
+}
+
+// =============================================
+// CALL / TEXT TRACKING
+// =============================================
+
+function initContactTracking() {
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+        if (!link || typeof gtag !== 'function') return;
+        gtag('event', link.href.startsWith('tel:') ? 'phone_click' : 'text_click', {
+            link_location: link.dataset.loc || link.closest('header, footer, .floating-cta, main, section')?.className.split(' ')[0] || 'page'
+        });
+    });
 }
