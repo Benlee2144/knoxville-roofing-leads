@@ -4353,3 +4353,11 @@ a.area-link:hover,
 .commercial-list li::before {
     color: var(--orange);
 }
+
+.prose .blog-cta a,
+.prose .article-cta a {
+    color: var(--charcoal);
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}

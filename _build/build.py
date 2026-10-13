@@ -904,7 +904,8 @@ def blog_index_page():
 
 # High-intent guides: no display ads, so readers aren't sent to competitors' ads.
 NO_ADS = {'roof-replacement-cost-knoxville', 'storm-damage-insurance-claim', 'emergency-roof-tarp',
-          'when-to-repair-leaking-roof', 'signs-you-need-new-roof', 'roof-repair-vs-replacement', 'hail-damage-what-to-know'}
+          'when-to-repair-leaking-roof', 'signs-you-need-new-roof', 'roof-repair-vs-replacement', 'hail-damage-what-to-know',
+          'best-roofers-knoxville'}
 
 
 def blog_post(p):
@@ -980,6 +981,8 @@ def blog_post(p):
 HOME_FAQS = [
     {'q': 'How much does a new roof cost in Knoxville, TN?',
      'a': 'Most Knoxville-area roof replacements fall somewhere between $8,000 and $25,000, depending on the size of the home, the material and how complex the roof is. Asphalt shingles are the most affordable option, while metal costs more but lasts longer. Try our roof cost calculator for a quick estimate, then compare written quotes.'},
+    {'q': 'Do Knoxville roofers give free estimates?',
+     'a': 'Most local roofers offer a free inspection and written estimate for roof replacements and storm damage. Some charge for small diagnostic visits or detailed reports, so ask up front. When you request quotes through us, the roofers you are matched with provide free estimates and there is no obligation to hire.'},
     {'q': 'Is this roofing quote service really free?',
      'a': 'Yes. The service is 100% free for homeowners. We connect you with up to 3 licensed, insured roofing contractors who provide free estimates, and there is no obligation to hire anyone. Contractors pay us a fee for the introduction.'},
     {'q': 'How quickly will I hear from roofers?',
