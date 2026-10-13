@@ -336,14 +336,14 @@ def build(g):
             <div class="area-link-grid center">{links}</div>
         </div>
     </section>'''
-    simple_page('/404.html', f'Page Not Found | {brand}', 'This page could not be found.', 'Page not found', None, nf, noindex=True)
+    simple_page('/404.html', f'Page Not Found | {brand}', 'This page could not be found.', 'Fumble! Page not found', None, nf, noindex=True)
 
     # ------------------------------------------------------------------ thank you
     ty = f'''    <main class="thank-you-section">
         <div class="container">
             <div class="thank-you-card">
                 <div class="thank-you-icon"><svg class="icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
-                <h1>You're all set</h1>
+                <h1>Touchdown! You're all set</h1>
                 <p class="thank-you-lead">We received your request. Keep your phone handy: local roofers usually reach out within 24-48 hours, often sooner for emergencies.</p>
                 <p class="thank-you-contact">Haven't heard back in 48 hours, or have a question? Call or text {g['CONTACT_NAME']} at <a href="tel:{g['PHONE_TEL']}">{g['PHONE_DISPLAY']}</a>.</p>
                 <ol class="next-steps">

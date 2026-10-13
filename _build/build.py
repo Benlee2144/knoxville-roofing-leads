@@ -169,7 +169,7 @@ def head(title, description, path, *, schema=(), og_type='website', noindex=Fals
     <meta name="description" content="{esc(description)}">
     <meta name="robots" content="{robots}">
     <link rel="canonical" href="{url}">
-    <meta name="theme-color" content="#1e3a5f">
+    <meta name="theme-color" content="#FF8200">
     <meta property="og:site_name" content="{BRAND}">
     <meta property="og:type" content="{og_type}">
     <meta property="og:title" content="{esc(title)}">
@@ -182,7 +182,7 @@ def head(title, description, path, *, schema=(), og_type='website', noindex=Fals
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css?v={VERSION}">''']
     parts += [jsonld(s) for s in schema]
     if ads:
@@ -345,7 +345,7 @@ def lead_form(source, location, zip_hint, preselect=None, title='Get Your Free Q
                     </div>
                     <form id="leadForm" class="lead-form" action="{FORMSPREE}" method="POST"{preselect_attr}>
                         <div class="form-progress" aria-hidden="true"><span class="form-progress-bar"></span></div>
-                        <p class="form-step-count" aria-live="polite">Step 1 of 3</p>
+                        <p class="form-step-count" aria-live="polite">1st down &middot; Step 1 of 3</p>
 
                         <fieldset class="form-step is-active" data-step="1">
                             <legend class="step-title">What do you need help with?</legend>
@@ -726,7 +726,8 @@ def service_page(d):
     slug = d['slug']
     path = f'/{slug}/'
     crumb_html, crumb_schema = breadcrumbs([('Home', '/'), ('Roofing Services', '/#services'), (d['name'], path)])
-    faq_html, faq_schema = faq_section(d['faqs'] + GENERAL_FAQS[:1], f'{d["name"]} Questions')
+    extra = [] if any('free' in f['q'].lower() for f in d['faqs']) else GENERAL_FAQS[:1]
+    faq_html, faq_schema = faq_section(d['faqs'] + extra, f'{d["name"]} Questions')
     form = lead_form(f'{BRAND} - {d["name"]}', 'Knoxville, TN', '37919', preselect=d['project_value'],
                      title=f'Get {d["name"]} Quotes' if len(d['name']) <= 18 else 'Get Your Free Quotes')
     features = ['Up to 3 quotes from local roofers', 'Licensed & insured contractors', 'Free, no-obligation estimates']

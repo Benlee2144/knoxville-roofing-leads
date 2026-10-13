@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // MULTI-STEP LEAD FORM
 // =============================================
 
+const DOWNS = ['1st down', '2nd down', '3rd down'];
+
 function initLeadForm() {
     const form = document.getElementById('leadForm');
     if (!form) return;
@@ -46,7 +48,7 @@ function initLeadForm() {
         current = index;
         steps.forEach((step, i) => step.classList.toggle('is-active', i === index));
         if (backBtn) backBtn.hidden = index === 0;
-        if (counter) counter.textContent = `Step ${index + 1} of ${steps.length}`;
+        if (counter) counter.textContent = `${DOWNS[index] || ''} \u00b7 Step ${index + 1} of ${steps.length}`;
         if (bar) bar.style.width = `${((index + 1) / steps.length) * 100}%`;
         if (focus && index > 0) {
             const first = steps[index].querySelector('input:not([type="radio"]):not([type="checkbox"])');
@@ -179,6 +181,7 @@ function initThankYouTracking() {
         lead = JSON.parse(sessionStorage.getItem('leadSubmitted') || 'null');
         sessionStorage.removeItem('leadSubmitted');
     } catch (err) { /* ignore */ }
+    celebrate();
     if (lead && typeof gtag === 'function') {
         gtag('event', 'generate_lead', {
             project: lead.project,
@@ -247,6 +250,18 @@ function initScrollAnimations() {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.problem-card, .service-card').forEach(el => observer.observe(el));
+
+    const revealTargets = document.querySelectorAll(
+        'section:not(.hero) .section-header, .step-card, .service-link-card, .guide-card, .hire-card, ' +
+        '.faq-accordion, .area-group, .county-block, .content-aside .aside-card, .table-wrap, .illustration, ' +
+        '.gameday-inner > *, .storm-layout > *, .signs-layout > *, .next-steps-card, .proof-item'
+    );
+    revealTargets.forEach(el => {
+        const siblings = Array.from(el.parentElement.children);
+        el.style.setProperty('--delay', `${Math.min(siblings.indexOf(el), 6) * 0.07}s`);
+        el.classList.add('reveal');
+        observer.observe(el);
+    });
 }
 
 function initSmoothScroll() {
@@ -325,4 +340,26 @@ function initContactTracking() {
             link_location: link.dataset.loc || link.closest('header, footer, .floating-cta, main, section')?.className.split(' ')[0] || 'page'
         });
     });
+}
+
+// =============================================
+// TOUCHDOWN CONFETTI (thank-you page)
+// =============================================
+
+function celebrate() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const colors = ['#FF8200', '#FFFFFF', '#FF8200', '#58595B'];
+    for (let i = 0; i < 90; i++) {
+        const piece = document.createElement('span');
+        piece.className = 'confetti';
+        piece.style.left = `${Math.random() * 100}vw`;
+        piece.style.background = colors[i % colors.length];
+        piece.style.boxShadow = '0 0 1px rgba(0,0,0,0.25)';
+        piece.style.animationDuration = `${2.4 + Math.random() * 2.2}s`;
+        piece.style.animationDelay = `${Math.random() * 0.6}s`;
+        piece.style.setProperty('--drift', `${(Math.random() - 0.5) * 220}px`);
+        piece.style.setProperty('--spin', `${Math.random() * 900}deg`);
+        document.body.appendChild(piece);
+        piece.addEventListener('animationend', () => piece.remove());
+    }
 }

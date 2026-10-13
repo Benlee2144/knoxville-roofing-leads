@@ -33,6 +33,12 @@ python3 _build/build.py
 - Contact: Ben Arp, call or text (423) 920-4333. Set once in build.py (`CONTACT_NAME`, `PHONE_DISPLAY`, `PHONE_TEL`, `SMS_HREF`) and used in the header, mobile Call/Text bar, hero, footer, FAQs, schema and contact/legal pages.
 - GA events `phone_click` and `text_click` fire on tel:/sms: links.
 
+## Theme
+
+- Tennessee orange (#FF8200), white and charcoal with checkerboard trim, Oswald headings, football touches (form steps are "downs", thank-you page says "Touchdown!"). Colors live in the `:root` variables at the top of styles.css.
+- Orange text on white must use `--orange-ink` (small text) or `--orange-strong` (large headings) for contrast; bright `--orange` is for fills, buttons (with dark text) and dark backgrounds.
+- Don't use University of Tennessee marks or names (Power T, Vols/Volunteers, Smokey, Rocky Top, Big Orange, Neyland) or imply affiliation.
+
 ## Content rules
 
 - Use the inline SVG icons (`icon()` in build.py), never emojis.

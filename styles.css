@@ -6,28 +6,38 @@
 /* CSS Variables */
 
 :root {
-    --primary: #1e3a5f;
-    --primary-dark: #0f2744;
-    --secondary: #2d6a4f;
-    --accent: #e63946;
-    --accent-hover: #c1121f;
-    --warning: #f77f00;
-    --success: #2d6a4f;
-    --text-dark: #1a1a2e;
-    --text-medium: #4a4a6a;
-    --text-light: #6c757d;
-    --bg-light: #f8f9fa;
-    --bg-cream: #fefae0;
+    --orange: #FF8200;
+    --orange-dark: #E67300;
+    --orange-strong: #D46A00;
+    --orange-ink: #A65300;
+    --orange-tint: #FFF4E8;
+    --charcoal: #1C1C1C;
+    --smokey: #58595B;
+    --danger: #D93025;
+    --checker: repeating-conic-gradient(var(--orange) 0 25%, #ffffff 0 50%);
+    --primary: #2B2B2B;
+    --primary-dark: #161616;
+    --secondary: #A65300;
+    --accent: #FF8200;
+    --accent-hover: #E67300;
+    --warning: #FF8200;
+    --success: #A65300;
+    --text-dark: #1C1C1C;
+    --text-medium: #45464A;
+    --text-light: #6B6C70;
+    --bg-light: #F7F6F4;
+    --bg-cream: #FFF4E8;
     --white: #ffffff;
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
     --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
-    --shadow-lg: 0 8px 40px rgba(0,0,0,0.15);
-    --shadow-glow: 0 0 30px rgba(230, 57, 70, 0.3);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.18);
+    --shadow-glow: 0 0 30px rgba(255, 130, 0, 0.45);
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
     --radius-full: 50px;
     --transition: all 0.3s ease;
+    --font-display: 'Oswald', 'Inter', sans-serif;
 }
 
 /* Reset & Base */
@@ -117,7 +127,8 @@ body {
    ============================================= */
 
 .hero {
-    background: linear-gradient(135deg, rgba(30, 58, 95, 0.92) 0%, rgba(15, 39, 68, 0.95) 100%),
+    background: radial-gradient(circle at 85% 15%, rgba(255, 130, 0, 0.28), transparent 45%),
+                linear-gradient(135deg, rgba(22, 22, 22, 0.9) 0%, rgba(14, 14, 14, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
     padding: 60px 0 80px;
     position: relative;
@@ -299,7 +310,7 @@ body {
 .form-group select:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+    box-shadow: 0 0 0 3px rgba(43, 43, 43, 0.1);
 }
 
 .form-group input::placeholder {
@@ -320,7 +331,7 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 130, 0, 0.3);
 }
 
 .submit-btn:hover {
@@ -626,7 +637,7 @@ body {
     font-size: 1rem;
     font-weight: 700;
     transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 130, 0, 0.3);
 }
 
 .btn-primary:hover {
@@ -951,7 +962,7 @@ body {
     border-radius: var(--radius-sm);
     font-size: 1.1rem;
     font-weight: 700;
-    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 130, 0, 0.3);
 }
 
 /* =============================================
@@ -960,7 +971,7 @@ body {
 
 .commercial-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #1e3a5f 0%, #0f2744 100%);
+    background: linear-gradient(135deg, #262626 0%, #141414 100%);
     color: var(--white);
 }
 
@@ -1380,12 +1391,12 @@ body {
 }
 
 .problem-icon {
-    background: rgba(230, 57, 70, 0.1);
+    background: rgba(255, 130, 0, 0.1);
     color: var(--accent);
 }
 
 .service-icon {
-    background: rgba(30, 58, 95, 0.08);
+    background: rgba(43, 43, 43, 0.08);
     color: var(--primary);
 }
 
@@ -1396,7 +1407,7 @@ body {
 }
 
 .footer-contact p .icon {
-    color: #52b788;
+    color: #FF8200;
     margin-right: 8px;
     stroke-width: 3;
 }
@@ -1519,8 +1530,8 @@ body {
 
 .option-tile input:checked + .option-body {
     border-color: var(--accent);
-    background: #fff5f5;
-    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.12);
+    background: #FFF4E8;
+    box-shadow: 0 0 0 3px rgba(255, 130, 0, 0.12);
 }
 
 .option-tile input:checked + .option-body .icon {
@@ -1529,7 +1540,7 @@ body {
 
 .option-tile input:focus-visible + .option-body,
 .pill input:focus-visible + span {
-    outline: 3px solid rgba(30, 58, 95, 0.35);
+    outline: 3px solid rgba(43, 43, 43, 0.35);
     outline-offset: 2px;
 }
 
@@ -1737,7 +1748,7 @@ body {
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: rgba(30, 58, 95, 0.08);
+    background: rgba(43, 43, 43, 0.08);
     color: var(--primary);
     display: flex;
     align-items: center;
@@ -2370,7 +2381,7 @@ a.area-link:hover {
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    background: rgba(30, 58, 95, 0.08);
+    background: rgba(43, 43, 43, 0.08);
     color: var(--primary);
 }
 
@@ -2588,7 +2599,7 @@ a.area-link:hover {
 }
 
 .form-section .check-list .icon {
-    color: #52b788;
+    color: #FF8200;
 }
 
 /* =============================================
@@ -2625,7 +2636,7 @@ a.area-link:hover {
     gap: 4px;
     padding: 20px;
     border-radius: var(--radius-md);
-    background: #f2f6fb;
+    background: #FFF4E8;
     text-align: center;
 }
 
@@ -3066,7 +3077,7 @@ a.area-link:hover {
 }
 
 .compare-table .is-us {
-    background: #f0f7ff;
+    background: #FFF4E8;
     color: var(--primary);
     font-weight: 700;
 }
@@ -3313,7 +3324,7 @@ a.area-link:hover {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+    box-shadow: 0 0 0 3px rgba(43, 43, 43, 0.1);
 }
 
 /* Quote comparison worksheet */
@@ -3474,7 +3485,7 @@ a.area-link:hover {
 .footer-phone .icon {
     width: 18px;
     height: 18px;
-    color: #f77f00;
+    color: #FF8200;
 }
 
 .thank-you-contact {
@@ -3575,7 +3586,7 @@ a.area-link:hover {
         height: 44px;
         justify-content: center;
         border-radius: var(--radius-sm);
-        background: rgba(230, 57, 70, 0.08);
+        background: rgba(255, 130, 0, 0.08);
     }
 
     .header-phone span {
@@ -3590,4 +3601,755 @@ a.area-link:hover {
     .header-right {
         gap: 6px;
     }
+}
+
+/* =============================================
+   TENNESSEE ORANGE & WHITE THEME
+   ============================================= */
+
+h1, h2,
+.hero-title,
+.section-title,
+.form-title,
+.page-hero h1,
+.post-body h1,
+.nearby-title,
+.guide-group-title,
+.cta-band h2,
+.final-cta-content h2,
+.thank-you-card h1,
+.calc-card h2,
+.next-steps-card h3,
+.county-block h2 {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+}
+
+.hero-title,
+.section-title,
+.page-hero h1,
+.final-cta-content h2,
+.cta-band h2,
+.thank-you-card h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.08;
+}
+
+.hero-title {
+    font-size: 3.4rem;
+}
+
+.prose h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+}
+
+.post-body h1 {
+    font-weight: 700;
+}
+
+.hero-title .highlight {
+    color: var(--orange);
+}
+
+.text-danger,
+.text-primary {
+    color: var(--orange-strong) !important;
+}
+
+.commercial-section .section-title .text-primary {
+    color: var(--orange) !important;
+}
+
+/* Checkerboard trim ------------------------------------------------ */
+.header {
+    border-bottom: 0;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 6px;
+    background: var(--checker) 0 0 / 12px 12px;
+    pointer-events: none;
+}
+
+.hero,
+.page-hero,
+.final-cta-section,
+.form-section {
+    position: relative;
+}
+
+.hero::after,
+.page-hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 18px;
+    background: var(--checker) 0 0 / 36px 36px;
+    animation: checker-march 2.4s linear infinite;
+    z-index: 2;
+}
+
+.hero {
+    padding-bottom: 98px;
+}
+
+.footer {
+    position: relative;
+    border-top: 0;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: var(--checker) 0 0 / 24px 24px;
+}
+
+@keyframes checker-march {
+    to {
+        background-position: 36px 0;
+    }
+}
+
+.hero-overlay {
+    background: repeating-conic-gradient(rgba(255, 130, 0, 0.05) 0 25%, transparent 0 50%) 0 0 / 80px 80px;
+    opacity: 1;
+}
+
+.page-hero {
+    background: radial-gradient(circle at 90% 0%, rgba(255, 130, 0, 0.3), transparent 50%),
+                linear-gradient(135deg, #222 0%, #121212 100%);
+    padding-bottom: 64px;
+}
+
+/* Buttons ----------------------------------------------------------- */
+.btn-primary,
+.submit-btn,
+.floating-btn,
+.floating-cta .floating-btn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FF9419, var(--orange) 55%, var(--orange-dark));
+    color: var(--charcoal) !important;
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    box-shadow: 0 6px 18px rgba(255, 130, 0, 0.35);
+}
+
+.btn-primary::after,
+.submit-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+}
+
+.btn-primary:hover::after,
+.submit-btn:hover::after {
+    left: 125%;
+}
+
+.btn-primary:hover,
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-outline {
+    border-color: var(--charcoal);
+    color: var(--charcoal);
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.btn-outline:hover {
+    background: var(--charcoal);
+    color: var(--orange);
+}
+
+.header-cta {
+    font-size: 0.95rem;
+}
+
+/* Badges, links, icons ----------------------------------------------- */
+.section-badge {
+    background: var(--orange);
+    color: var(--charcoal);
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    clip-path: polygon(0 0, 100% 0, 94% 50%, 100% 100%, 0 100%, 6% 50%);
+    border-radius: 0;
+    padding: 8px 26px;
+}
+
+.form-badge {
+    background: var(--charcoal);
+    color: var(--orange);
+    font-family: var(--font-display);
+    letter-spacing: 0.1em;
+}
+
+.hero-badge {
+    background: rgba(255, 130, 0, 0.16);
+    border: 1px solid rgba(255, 130, 0, 0.45);
+}
+
+.badge-icon .icon {
+    color: var(--orange);
+}
+
+.text-link,
+.guide-link,
+.post-category,
+.link-list a,
+.prose a,
+.steps-list a,
+.area-group-links a,
+.breadcrumbs a:hover {
+    color: var(--orange-ink);
+}
+
+.feature-check,
+.why-icon {
+    background: var(--orange);
+    color: var(--charcoal);
+}
+
+.check-list .icon,
+.compare-table td.is-us .icon {
+    color: var(--orange-strong);
+}
+
+.problem-icon,
+.hire-icon,
+.service-icon,
+.service-link-icon,
+.guide-icon,
+.next-step-icon,
+.thank-you-icon {
+    background: var(--orange-tint);
+    color: var(--orange-ink);
+}
+
+.service-link-card:hover,
+.guide-card:hover,
+a.area-link:hover,
+.problem-card:hover,
+.service-card:hover {
+    border-color: var(--orange);
+}
+
+.service-link-card:hover,
+.guide-card:hover,
+.hire-card:hover,
+.step-card:hover {
+    box-shadow: inset 0 4px 0 var(--orange), var(--shadow-md);
+}
+
+.area-link .icon,
+.header-phone .icon,
+.mobile-nav-phone .icon,
+.contact-card .contact-line .icon,
+.floating-action .icon {
+    color: var(--orange-strong);
+}
+
+.step-number {
+    background: var(--orange);
+    color: var(--charcoal);
+    font-family: var(--font-display);
+}
+
+.step-kicker {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange-ink);
+}
+
+.steps-list li::before {
+    background: var(--orange);
+    color: var(--charcoal);
+    font-family: var(--font-display);
+}
+
+.compare-table .is-us {
+    background: var(--orange-tint);
+    color: var(--charcoal);
+}
+
+.compare-table thead .is-us {
+    background: var(--orange);
+    color: var(--charcoal);
+}
+
+.pill input:checked + span {
+    background: var(--charcoal);
+    border-color: var(--charcoal);
+    color: var(--orange);
+}
+
+.option-tile input:checked + .option-body {
+    border-color: var(--orange);
+    background: var(--orange-tint);
+    box-shadow: 0 0 0 3px rgba(255, 130, 0, 0.25);
+}
+
+.option-tile input:checked + .option-body .icon {
+    color: var(--orange-ink);
+}
+
+.form-group.is-invalid input:not([type="radio"]):not([type="checkbox"]),
+.option-grid.is-invalid .option-body,
+.form-group.is-invalid .pill span {
+    border-color: var(--danger);
+}
+
+.form-error,
+.checkbox-group.is-invalid .checkbox-text {
+    color: var(--danger);
+}
+
+.zip-hint.is-match {
+    color: var(--orange-ink);
+}
+
+.checkbox-label input[type="checkbox"] {
+    accent-color: var(--orange-dark);
+}
+
+/* Form card: checkerboard top and football progress ---------------- */
+.form-card::before {
+    height: 8px;
+    background: var(--checker) 0 0 / 16px 16px;
+}
+
+.form-progress {
+    height: 12px;
+    overflow: visible;
+    background:
+        repeating-linear-gradient(90deg, transparent 0 calc(10% - 2px), rgba(255, 255, 255, 0.9) calc(10% - 2px) 10%),
+        #3a3a3a;
+}
+
+.form-progress-bar {
+    position: relative;
+    background: linear-gradient(90deg, var(--orange-dark), var(--orange));
+    transition: width 0.5s cubic-bezier(.2, .9, .3, 1.2);
+}
+
+.form-progress-bar::after {
+    content: "";
+    position: absolute;
+    right: -11px;
+    top: 50%;
+    width: 22px;
+    height: 14px;
+    border-radius: 50%;
+    background:
+        linear-gradient(90deg, transparent 6px, #fff 6px 7px, transparent 7px 9px, #fff 9px 10px, transparent 10px 12px, #fff 12px 13px, transparent 13px) center 5px / 100% 4px no-repeat,
+        linear-gradient(#fff, #fff) center / 9px 1.5px no-repeat,
+        #7B3F12;
+    transform: translateY(-50%) rotate(-12deg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.form-step-count {
+    color: var(--orange-ink);
+    font-family: var(--font-display);
+    letter-spacing: 0.1em;
+}
+
+/* Scoreboard proof bar ------------------------------------------------ */
+.social-proof-bar {
+    background: var(--charcoal);
+    border-bottom: 0;
+    padding: 34px 0;
+}
+
+.proof-number {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--orange);
+    text-shadow: 0 0 18px rgba(255, 130, 0, 0.45);
+    letter-spacing: 0.02em;
+}
+
+.proof-label {
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.proof-divider {
+    background: rgba(255, 130, 0, 0.35);
+}
+
+/* Dark sections ------------------------------------------------------ */
+.final-cta-section {
+    background:
+        linear-gradient(rgba(20, 20, 20, 0.93), rgba(20, 20, 20, 0.93)),
+        repeating-conic-gradient(var(--orange) 0 25%, #1c1c1c 0 50%) 0 0 / 120px 120px;
+    overflow: hidden;
+}
+
+.final-cta-section::before,
+.final-cta-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 14px;
+    background: var(--checker) 0 0 / 28px 28px;
+    animation: checker-march 2.4s linear infinite;
+}
+
+.final-cta-section::before {
+    top: 0;
+}
+
+.final-cta-section::after {
+    bottom: 0;
+    animation-direction: reverse;
+}
+
+.final-cta-content h2 span,
+.final-cta-content strong {
+    color: var(--orange);
+}
+
+.final-cta-note .icon {
+    color: var(--orange);
+}
+
+.form-section,
+.commercial-section {
+    background: radial-gradient(circle at 10% 0%, rgba(255, 130, 0, 0.22), transparent 45%),
+                linear-gradient(135deg, #262626 0%, #141414 100%);
+}
+
+.form-section .check-list .icon {
+    color: var(--orange);
+}
+
+.commercial-section .section-badge,
+.form-section .section-badge {
+    background: var(--orange);
+    color: var(--charcoal);
+}
+
+.footer {
+    background: #141414;
+}
+
+.footer h4 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--orange);
+}
+
+/* Game-day band ------------------------------------------------------ */
+.gameday-section {
+    position: relative;
+    padding: 80px 0;
+    background: var(--orange);
+    color: var(--charcoal);
+    overflow: hidden;
+}
+
+.gameday-section::before,
+.gameday-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 18px;
+    background: repeating-conic-gradient(var(--charcoal) 0 25%, #fff 0 50%) 0 0 / 36px 36px;
+}
+
+.gameday-section::before {
+    top: 0;
+}
+
+.gameday-section::after {
+    bottom: 0;
+}
+
+.gameday-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+}
+
+.gameday-kicker {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.gameday-section h2 {
+    margin: 8px 0 16px;
+    font-family: var(--font-display);
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.02;
+    text-transform: uppercase;
+}
+
+.gameday-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 560px;
+}
+
+.gameday-card {
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    background: var(--charcoal);
+    color: var(--white);
+    box-shadow: var(--shadow-lg);
+    transform: rotate(-1.5deg);
+}
+
+.gameday-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 14px;
+}
+
+.gameday-card .check-list li {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.gameday-card .check-list .icon {
+    color: var(--orange);
+}
+
+.gameday-card .btn-primary {
+    margin-top: 22px;
+}
+
+.gameday-section .btn-outline {
+    margin-top: 26px;
+}
+
+/* Thank-you confetti ------------------------------------------------- */
+.confetti {
+    position: fixed;
+    top: -20px;
+    width: 10px;
+    height: 14px;
+    z-index: 3000;
+    pointer-events: none;
+    animation: confetti-fall linear forwards;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translate3d(var(--drift), 110vh, 0) rotate(var(--spin));
+        opacity: 0.9;
+    }
+}
+
+/* Scroll + load animations ------------------------------------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2, .8, .2, 1);
+    transition-delay: var(--delay, 0s);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+.hero-text > * {
+    animation: rise 0.8s cubic-bezier(.2, .8, .2, 1) both;
+}
+
+.hero-text > *:nth-child(2) { animation-delay: 0.08s; }
+.hero-text > *:nth-child(3) { animation-delay: 0.16s; }
+.hero-text > *:nth-child(4) { animation-delay: 0.24s; }
+.hero-text > *:nth-child(5) { animation-delay: 0.32s; }
+.hero-text > *:nth-child(6) { animation-delay: 0.4s; }
+
+.hero-form-wrapper,
+.calc-card {
+    animation: slide-in 0.9s cubic-bezier(.2, .8, .2, 1) 0.15s both;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(40px) rotate(1deg);
+    }
+}
+
+.proof-item {
+    transition: transform 0.3s ease;
+}
+
+.proof-item:hover {
+    transform: scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .confetti {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .gameday-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .gameday-card {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.3rem;
+    }
+
+    .gameday-section h2 {
+        font-size: 2.3rem;
+    }
+
+    .proof-number {
+        font-size: 1.9rem;
+    }
+
+    .hero {
+        padding-bottom: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+}
+
+/* Two-row checkerboard bands (so they read as checkerboard, not dashes) */
+.header::after {
+    bottom: -10px;
+    height: 10px;
+    background-size: 10px 10px;
+}
+
+.hero::after,
+.page-hero::after {
+    height: 28px;
+    background-size: 28px 28px;
+    animation-name: checker-march-28;
+}
+
+.footer::before {
+    height: 16px;
+    background-size: 16px 16px;
+}
+
+.form-card::before {
+    height: 10px;
+    background-size: 10px 10px;
+}
+
+.final-cta-section::before,
+.final-cta-section::after {
+    height: 20px;
+    background-size: 20px 20px;
+    animation-name: checker-march-20;
+}
+
+.gameday-section::before,
+.gameday-section::after {
+    height: 24px;
+    background-size: 24px 24px;
+}
+
+@keyframes checker-march-28 {
+    to {
+        background-position: 28px 0;
+    }
+}
+
+@keyframes checker-march-20 {
+    to {
+        background-position: 20px 0;
+    }
+}
+
+.footer .logo-icon-img {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.problem-cost {
+    background: var(--orange-tint);
+    color: var(--text-medium);
+}
+
+.problem-cost span {
+    color: var(--orange-ink);
+}
+
+.commercial-list li::before {
+    color: var(--orange);
 }
