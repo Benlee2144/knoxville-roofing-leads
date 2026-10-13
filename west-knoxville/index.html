@@ -40,8 +40,6 @@
         }
     }
     </script>
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5819445292295786" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
@@ -54,13 +52,7 @@
                 </div>
             </a>
             <div class="header-right">
-                <div class="phone-cta">
-                    <span class="phone-label">Free Service - No Obligation</span>
-                    <span class="phone-number">
-                        <span class="phone-icon">✓</span>
-                        100% Free Quotes
-                    </span>
-                </div>
+                <a href="#quote" class="btn-primary header-cta">Get Free Quotes</a>
             </div>
         </div>
     </header>
@@ -70,7 +62,7 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <div class="hero-badge">
-                    <span class="badge-icon">📍</span>
+                    <span class="badge-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
                     <span>Serving West Knoxville & Bearden</span>
                 </div>
                 <h1 class="hero-title">
@@ -81,16 +73,16 @@
                 </p>
                 <div class="hero-features">
                     <div class="hero-feature">
-                        <span class="feature-check">✓</span>
+                        <span class="feature-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                         <span>Local West Knox Contractors</span>
                     </div>
                     <div class="hero-feature">
-                        <span class="feature-check">✓</span>
+                        <span class="feature-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
                         <span>All Contractors Licensed & Insured</span>
                     </div>
                     <div class="hero-feature">
-                        <span class="feature-check">✓</span>
-                        <span>Save Up to 40% by Comparing</span>
+                        <span class="feature-check"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+                        <span>Free, No-Obligation Estimates</span>
                     </div>
                 </div>
             </div>
@@ -102,63 +94,81 @@
                         <p class="form-subtitle">Takes less than 60 seconds</p>
                     </div>
                     <form id="leadForm" class="lead-form" action="https://formspree.io/f/xdeawzlj" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" placeholder="John Smith" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(865) 555-1234" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" placeholder="john@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Property Address *</label>
-                            <input type="text" id="address" name="address" placeholder="123 Kingston Pike, Knoxville, TN" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="issue">What Do You Need?</label>
-                            <select id="issue" name="issue" required>
-                                <option value="">Select your project...</option>
-                                <option value="storm-damage">Storm / Hail Damage Repair</option>
-                                <option value="leak">Roof Leak Repair</option>
-                                <option value="missing-shingles">Missing Shingles</option>
-                                <option value="full-replacement">Full Roof Replacement</option>
-                                <option value="inspection">Free Inspection / Assessment</option>
-                                <option value="insurance">Insurance Claim Help</option>
-                                <option value="other">Other Roofing Service</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="timeframe">When Do You Need This Done? *</label>
-                            <select id="timeframe" name="timeframe" required>
-                                <option value="">Select timeframe...</option>
-                                <option value="emergency">Emergency - ASAP!</option>
-                                <option value="within-week">Within 1 Week</option>
-                                <option value="within-month">Within 1 Month</option>
-                                <option value="flexible">Flexible / Just Getting Quotes</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="homeowner">Are You the Homeowner? *</label>
-                            <select id="homeowner" name="homeowner" required>
-                                <option value="">Select...</option>
-                                <option value="yes">Yes, I own this property</option>
-                                <option value="no">No, I'm a renter</option>
-                                <option value="agent">I'm a property manager/agent</option>
-                            </select>
-                        </div>
+                        <div class="form-progress" aria-hidden="true"><span class="form-progress-bar"></span></div>
+                        <p class="form-step-count" aria-live="polite">Step 1 of 3</p>
+
+                        <fieldset class="form-step is-active" data-step="1">
+                            <legend class="step-title">What do you need help with?</legend>
+                            <div class="option-grid">
+                                <label class="option-tile"><input type="radio" name="project" value="Roof leak" required><span class="option-body"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg><span>Roof leak</span></span></label>
+                                <label class="option-tile"><input type="radio" name="project" value="Storm / hail damage"><span class="option-body"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973"/><path d="m13 12-3 5h4l-3 5"/></svg><span>Storm / hail damage</span></span></label>
+                                <label class="option-tile"><input type="radio" name="project" value="Roof replacement"><span class="option-body"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span>Roof replacement</span></span></label>
+                                <label class="option-tile"><input type="radio" name="project" value="Roof repair"><span class="option-body"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg><span>Roof repair</span></span></label>
+                                <label class="option-tile"><input type="radio" name="project" value="Inspection"><span class="option-body"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>Inspection</span></span></label>
+                                <label class="option-tile"><input type="radio" name="project" value="Commercial roof"><span class="option-body"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg><span>Commercial roof</span></span></label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="form-step" data-step="2">
+                            <legend class="step-title">Tell us about the property</legend>
+                            <div class="form-group">
+                                <label for="zip">Property ZIP code</label>
+                                <input type="text" id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" pattern="[0-9]{5}" placeholder="37922" required>
+                            </div>
+                            <div class="form-group">
+                                <span class="group-label" id="timeframe-label">How soon do you need it?</span>
+                                <div class="pill-group" role="radiogroup" aria-labelledby="timeframe-label">
+                                    <label class="pill"><input type="radio" name="timeframe" value="Emergency - ASAP" required><span>ASAP / emergency</span></label>
+                                    <label class="pill"><input type="radio" name="timeframe" value="Within 1 week"><span>Within a week</span></label>
+                                    <label class="pill"><input type="radio" name="timeframe" value="Within 1 month"><span>Within a month</span></label>
+                                    <label class="pill"><input type="radio" name="timeframe" value="Just planning"><span>Just planning</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="group-label" id="owner-label">Do you own the property?</span>
+                                <div class="pill-group" role="radiogroup" aria-labelledby="owner-label">
+                                    <label class="pill"><input type="radio" name="owner" value="Owner" required><span>Yes, I own it</span></label>
+                                    <label class="pill"><input type="radio" name="owner" value="Property manager"><span>I manage it</span></label>
+                                    <label class="pill"><input type="radio" name="owner" value="Renter"><span>No, I rent</span></label>
+                                </div>
+                            </div>
+                            <button type="button" class="submit-btn step-next"><span class="btn-text">Continue</span><svg class="icon btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+                        </fieldset>
+
+                        <fieldset class="form-step" data-step="3">
+                            <legend class="step-title">Where should we send your quotes?</legend>
+                            <div class="form-group">
+                                <label for="name">Full name</label>
+                                <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone number</label>
+                                <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(865) 555-1234" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="consent" value="yes" required>
+                                    <span class="checkbox-text">I agree to be contacted by phone, text, or email by up to 3 roofing contractors about this project. Consent is not a condition of purchase. <a href="#" onclick="alert('By submitting this form, you consent to receive phone calls and text messages from roofing contractors in our network regarding your quote request. Message and data rates may apply. You can opt out at any time by replying STOP. Your information is only shared with contractors matched to your project. We do not sell your data to third parties for marketing purposes.'); return false;">Terms</a></span>
+                                </label>
+                            </div>
+                            <button type="submit" class="submit-btn"><span class="btn-text">Get My Free Quotes</span><svg class="icon btn-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+                            <p class="form-error" role="alert" hidden></p>
+                        </fieldset>
+
+                        <button type="button" class="step-back" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Back</button>
+
                         <input type="hidden" name="source" value="Knoxville Roofing Quotes - West Knoxville">
                         <input type="hidden" name="location" value="West Knoxville, TN">
-                        <button type="submit" class="submit-btn">
-                            <span class="btn-text">Get My Free Quotes</span>
-                            <span class="btn-arrow">→</span>
-                        </button>
-                        <p class="form-privacy">
-                            🔒 Your info is only shared with contractors you're matched with.
-                        </p>
+                        <input type="hidden" name="_subject" value="New roofing lead - West Knoxville, TN">
+                        <input type="hidden" name="page" value="">
+                        <input type="hidden" name="timestamp" value="">
+                        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <p class="form-privacy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Only shared with the roofers matched to your project. No spam.</p>
                     </form>
                 </div>
             </div>
@@ -214,11 +224,15 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Knoxville Roofing Quotes. All rights reserved.</p>
+                <p>&copy; 2026 Knoxville Roofing Quotes. All rights reserved.</p>
                 <p class="footer-legal">This is a free lead generation service. We may receive compensation from contractors in our network.</p>
             </div>
         </div>
     </footer>
+    <!-- Floating CTA (Mobile) -->
+    <div class="floating-cta">
+        <a href="#quote" class="floating-btn">Get Free Quotes</a>
+    </div>
 
     <script src="../script.js"></script>
 </body>

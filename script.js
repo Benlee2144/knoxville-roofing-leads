@@ -1,218 +1,232 @@
-// =============================================
-// KNOXVILLE ROOF PROS - Lead Generation Scripts
-// =============================================
-
 document.addEventListener('DOMContentLoaded', function() {
-    initFormHandler();
+    initLeadForm();
     initScrollAnimations();
     initPhoneFormatting();
-    initTimestamp();
+    initZipInput();
     initSmoothScroll();
+    initFloatingCta();
+    initThankYouTracking();
 });
 
 // =============================================
-// FORM HANDLER
+// MULTI-STEP LEAD FORM
 // =============================================
 
-function initFormHandler() {
+function initLeadForm() {
     const form = document.getElementById('leadForm');
+    if (!form) return;
 
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            // Validate required fields
-            const requiredFields = form.querySelectorAll('[required]');
-            let isValid = true;
+    const steps = Array.from(form.querySelectorAll('.form-step'));
+    const backBtn = form.querySelector('.step-back');
+    const counter = form.querySelector('.form-step-count');
+    const bar = form.querySelector('.form-progress-bar');
+    let current = 0;
 
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.style.borderColor = '#e63946';
-                    field.style.animation = 'shake 0.5s ease';
-                } else {
-                    field.style.borderColor = '#e9ecef';
-                }
-            });
+    // Without JS every step stays visible and native validation applies.
+    form.classList.add('is-stepped');
+    form.noValidate = true;
 
-            // Validate phone number format
-            const phoneField = document.getElementById('phone');
-            if (phoneField && phoneField.value) {
-                const phoneDigits = phoneField.value.replace(/\D/g, '');
-                if (phoneDigits.length < 10) {
-                    isValid = false;
-                    phoneField.style.borderColor = '#e63946';
-                }
-            }
+    const timestamp = form.querySelector('[name="timestamp"]');
+    if (timestamp) timestamp.value = new Date().toISOString();
+    const page = form.querySelector('[name="page"]');
+    if (page) page.value = window.location.pathname;
 
-            // Validate email format
-            const emailField = document.getElementById('email');
-            if (emailField && emailField.value) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailField.value)) {
-                    isValid = false;
-                    emailField.style.borderColor = '#e63946';
-                }
-            }
-
-            if (!isValid) {
-                e.preventDefault();
-                alert('Please fill in all required fields correctly.');
-                return;
-            }
-
-            // If form action is placeholder, show success message
-            if (form.action.includes('YOUR_FORM_ID')) {
-                e.preventDefault();
-                showSuccessMessage();
-            }
-        });
-
-        // Remove error styling on input
-        form.querySelectorAll('input, select').forEach(field => {
-            field.addEventListener('input', () => {
-                field.style.borderColor = '#e9ecef';
-                field.style.animation = '';
-            });
-        });
+    function show(index) {
+        current = index;
+        steps.forEach((step, i) => step.classList.toggle('is-active', i === index));
+        if (backBtn) backBtn.hidden = index === 0;
+        if (counter) counter.textContent = `Step ${index + 1} of ${steps.length}`;
+        if (bar) bar.style.width = `${((index + 1) / steps.length) * 100}%`;
+        if (index > 0) {
+            const first = steps[index].querySelector('input:not([type="radio"]):not([type="checkbox"])');
+            if (first && window.matchMedia('(min-width: 769px)').matches) first.focus({ preventScroll: true });
+        }
     }
-}
 
-// =============================================
-// SUCCESS MESSAGE
-// =============================================
+    function stepIsValid(step) {
+        let valid = true;
+        step.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
 
-function showSuccessMessage() {
-    const form = document.getElementById('leadForm');
-    const formCard = form.closest('.form-card');
-
-    formCard.innerHTML = `
-        <div class="success-message" style="text-align: center; padding: 40px 20px;">
-            <div style="font-size: 4rem; margin-bottom: 20px;">✅</div>
-            <h2 style="color: #2d6a4f; font-size: 1.8rem; margin-bottom: 15px;">Request Received!</h2>
-            <p style="color: #4a4a6a; font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">
-                Thank you! One of our roofing specialists will contact you within <strong>24 hours</strong> to schedule your free inspection.
-            </p>
-            <p style="color: #6c757d; font-size: 0.95rem;">
-                📞 Need immediate help? Call us at <a href="tel:+18655551234" style="color: #e63946; font-weight: 600;">(865) 555-ROOF</a>
-            </p>
-        </div>
-    `;
-
-    // Scroll to form
-    formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-    // Track conversion (placeholder for analytics)
-    if (typeof gtag === 'function') {
-        gtag('event', 'lead_form_submit', {
-            'event_category': 'Lead Generation',
-            'event_label': 'Knoxville Roofing'
-        });
-    }
-}
-
-// =============================================
-// SCROLL ANIMATIONS
-// =============================================
-
-function initScrollAnimations() {
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+        step.querySelectorAll('input').forEach(input => {
+            let ok = input.checkValidity();
+            if (ok && input.name === 'phone') ok = input.value.replace(/\D/g, '').length >= 10;
+            if (!ok) {
+                valid = false;
+                const wrapper = input.closest('.form-group, .option-grid, .checkbox-group') || input;
+                wrapper.classList.add('is-invalid');
             }
         });
-    }, observerOptions);
 
-    // Observe cards
-    document.querySelectorAll('.problem-card, .service-card, .testimonial-card').forEach(el => {
-        observer.observe(el);
+        if (!valid) {
+            const firstBad = step.querySelector('.is-invalid input, input.is-invalid');
+            if (firstBad && firstBad.type !== 'radio') firstBad.focus();
+        }
+        return valid;
+    }
+
+    form.addEventListener('change', (e) => {
+        const group = e.target.closest('.is-invalid');
+        if (group) group.classList.remove('is-invalid');
+
+        // Picking a project on step 1 moves straight on.
+        if (e.target.name === 'project' && current === 0) {
+            setTimeout(() => show(1), 180);
+        }
     });
+
+    form.addEventListener('input', (e) => {
+        const group = e.target.closest('.is-invalid');
+        if (group) group.classList.remove('is-invalid');
+    });
+
+    form.querySelectorAll('.step-next').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (stepIsValid(steps[current])) show(current + 1);
+        });
+    });
+
+    if (backBtn) backBtn.addEventListener('click', () => show(Math.max(0, current - 1)));
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const firstInvalid = steps.findIndex(step => !stepIsValid(step));
+        if (firstInvalid !== -1) {
+            show(firstInvalid);
+            stepIsValid(steps[firstInvalid]); // re-run so focus lands on the now-visible field
+            return;
+        }
+        submitLead(form);
+    });
+
+    show(0);
+}
+
+async function submitLead(form) {
+    const button = form.querySelector('button[type="submit"]');
+    const errorBox = form.querySelector('.form-error');
+    const label = button.querySelector('.btn-text');
+    const originalLabel = label.textContent;
+
+    button.disabled = true;
+    label.textContent = 'Sending...';
+    if (errorBox) errorBox.hidden = true;
+
+    let response;
+    try {
+        response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+        });
+    } catch (err) {
+        // Network/CORS problem: fall back to a normal form post so the lead isn't lost.
+        form.submit();
+        return;
+    }
+
+    if (response.ok) {
+        const data = new FormData(form);
+        try {
+            sessionStorage.setItem('leadSubmitted', JSON.stringify({
+                project: data.get('project') || '',
+                timeframe: data.get('timeframe') || '',
+                location: data.get('location') || 'Knoxville, TN'
+            }));
+        } catch (err) { /* storage blocked; lead is still sent */ }
+        window.location.href = '/thank-you/';
+        return;
+    }
+
+    const body = await response.json().catch(() => ({}));
+    const message = body.errors && body.errors.length
+        ? body.errors.map(e => e.message).join(' ')
+        : 'Something went wrong sending your request. Please try again.';
+    if (errorBox) {
+        errorBox.textContent = message;
+        errorBox.hidden = false;
+    }
+    button.disabled = false;
+    label.textContent = originalLabel;
+}
+
+function initThankYouTracking() {
+    if (!document.body.classList.contains('thank-you-page')) return;
+    let lead = null;
+    try {
+        lead = JSON.parse(sessionStorage.getItem('leadSubmitted') || 'null');
+        sessionStorage.removeItem('leadSubmitted');
+    } catch (err) { /* ignore */ }
+    if (lead && typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+            project: lead.project,
+            timeframe: lead.timeframe,
+            form_location: lead.location
+        });
+    }
 }
 
 // =============================================
-// PHONE NUMBER FORMATTING
+// INPUT HELPERS
 // =============================================
 
 function initPhoneFormatting() {
     const phoneInput = document.getElementById('phone');
+    if (!phoneInput) return;
 
-    if (phoneInput) {
-        phoneInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
+    phoneInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '').slice(0, 10);
+        if (value.length >= 6) {
+            value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6)}`;
+        } else if (value.length >= 3) {
+            value = `(${value.slice(0,3)}) ${value.slice(3)}`;
+        }
+        e.target.value = value;
+    });
+}
 
-            if (value.length >= 10) {
-                value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6,10)}`;
-            } else if (value.length >= 6) {
-                value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6)}`;
-            } else if (value.length >= 3) {
-                value = `(${value.slice(0,3)}) ${value.slice(3)}`;
-            }
+function initZipInput() {
+    const zip = document.getElementById('zip');
+    if (!zip) return;
+    zip.addEventListener('input', () => {
+        zip.value = zip.value.replace(/\D/g, '').slice(0, 5);
+    });
+}
 
-            e.target.value = value;
+// =============================================
+// PAGE BEHAVIOUR
+// =============================================
+
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
         });
-    }
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.problem-card, .service-card').forEach(el => observer.observe(el));
 }
-
-// =============================================
-// TIMESTAMP FOR FORM
-// =============================================
-
-function initTimestamp() {
-    const timestampField = document.getElementById('timestamp');
-    if (timestampField) {
-        timestampField.value = new Date().toISOString();
-    }
-}
-
-// =============================================
-// SMOOTH SCROLL
-// =============================================
 
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-
             const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            if (!target) return;
+            e.preventDefault();
+            const offset = target.getBoundingClientRect().top + window.pageYOffset - 80;
+            window.scrollTo({ top: offset, behavior: 'smooth' });
         });
     });
 }
 
-// =============================================
-// SHAKE ANIMATION
-// =============================================
+function initFloatingCta() {
+    const cta = document.querySelector('.floating-cta');
+    const form = document.getElementById('quote');
+    if (!cta || !form) return;
 
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-        20%, 40%, 60%, 80% { transform: translateX(5px); }
-    }
-`;
-document.head.appendChild(style);
-
-// =============================================
-// CONSOLE BRANDING
-// =============================================
-
-console.log('%c🏠 Knoxville Roof Pros', 'color: #1e3a5f; font-size: 24px; font-weight: bold;');
-console.log('%cLead Generation Landing Page', 'color: #6c757d; font-size: 14px;');
-console.log('%c📞 (865) 555-ROOF', 'color: #e63946; font-size: 16px; font-weight: bold;');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => cta.classList.toggle('is-hidden', entry.isIntersecting));
+    }, { threshold: 0.15 });
+    observer.observe(form);
+}
