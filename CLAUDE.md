@@ -33,6 +33,12 @@ python3 _build/build.py
 - Contact: Ben Arp, call or text (423) 920-4333. Set once in build.py (`CONTACT_NAME`, `PHONE_DISPLAY`, `PHONE_TEL`, `SMS_HREF`) and used in the header, mobile Call/Text bar, hero, footer, FAQs, schema and contact/legal pages.
 - GA events `phone_click` and `text_click` fire on tel:/sms: links.
 
+## Roofer map (/roofers/)
+
+- Data: `_build/data/roofers.json` (name, website, phone, city, county, services). Researched from each company's own website; never copy Google/Yelp/BBB ratings or reviews. Town coordinates come from `_build/data/tn_places.json` (US Census gazetteer); pins sit on the town, not the street address.
+- `_build/roofers.py` builds the map page, `/roofers/get-listed/` (badge + add/update/remove form) and the "roofers in/near X" sections on location pages. Map JS: `roofer-map.js`; Leaflet + markercluster are self-hosted in `vendor/`.
+- Outbound roofer links stay `rel="nofollow"`. Don't offer followed links in exchange for backlinks (Google treats that as a link scheme); the badge is free with no conditions.
+
 ## Theme
 
 - Tennessee orange (#FF8200), white and charcoal with checkerboard trim, Oswald headings, football touches (form steps are "downs", thank-you page says "Touchdown!"). Colors live in the `:root` variables at the top of styles.css.
