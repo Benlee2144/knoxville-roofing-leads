@@ -896,7 +896,7 @@ def blog_index_page():
 {chr(10).join(sections)}
         </div>
     </section>'''
-    simple_page('/blog/', 'Roofing Guides for Knoxville Homeowners | Costs, Storms & Repairs',
+    simple_page('/blog/', 'Roofing Guides for Knoxville Homeowners | Costs & Repairs',
                 'Plain-English roofing guides for East Tennessee: replacement costs, storm and hail damage, insurance claims, materials, maintenance and hiring a roofer.',
                 'Homeowner Roofing Guides', 'Straight answers about roof costs, storm damage, insurance claims, materials and hiring a roofer in East Tennessee.',
                 body, schema=[{'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': 'Homeowner Roofing Guides', 'url': SITE + '/blog/'}])
