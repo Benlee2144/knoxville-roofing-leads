@@ -1031,7 +1031,10 @@ def areas_block():
             <div class="area-groups">
 {chr(10).join(groups)}
             </div>
-            <div class="center"><a href="/service-areas/" class="text-link">See all service areas {icon('arrow-right')}</a></div>
+            <div class="center button-row center-row">
+                <a href="/roofers/" class="btn-primary">Browse the East Tennessee Roofer Map</a>
+                <a href="/service-areas/" class="btn-outline">All Service Areas</a>
+            </div>
         </div>
     </section>'''
 

@@ -1,0 +1,1229 @@
+[
+ {
+  "name": "Henley Roofing Company",
+  "website": "https://henleyroofing.net/",
+  "phone": "(865) 859-9051",
+  "city": "Heiskell",
+  "county": "Anderson",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://henleyroofing.net/contact/"
+ },
+ {
+  "name": "Brogdon Roofing",
+  "website": "https://brogdonroofinginc.com/",
+  "phone": "(865) 483-8900",
+  "city": "Oak Ridge",
+  "county": "Anderson",
+  "services": [
+   "commercial",
+   "gutters",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": "30350",
+  "source": "https://brogdonroofinginc.com/"
+ },
+ {
+  "name": "Climax Roofing & Renovations, LLC",
+  "website": "https://www.climaxrr.com/",
+  "phone": "(865) 406-5431",
+  "city": "Oak Ridge",
+  "county": "Anderson",
+  "services": [
+   "commercial",
+   "gutters",
+   "metal",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.climaxrr.com/"
+ },
+ {
+  "name": "Creative Metal Systems LLC",
+  "website": "https://creativemetalsystems.com/",
+  "phone": "(865) 738-8962",
+  "city": "Louisville",
+  "county": "Blount",
+  "services": [
+   "commercial",
+   "flat",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://creativemetalsystems.com/"
+ },
+ {
+  "name": "Alpha Roofing Plus",
+  "website": "https://www.alpharoofingtennessee.com/",
+  "phone": "(865) 671-7663",
+  "city": "Maryville",
+  "county": "Blount",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.alpharoofingtennessee.com/"
+ },
+ {
+  "name": "High Country Contracting Inc.",
+  "website": "https://www.highcountrycontracting.com/",
+  "phone": "(865) 258-9381",
+  "city": "Maryville",
+  "county": "Blount",
+  "services": [
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.highcountrycontracting.com/"
+ },
+ {
+  "name": "Jim White Builders Inc.",
+  "website": "https://www.jimwhiteroofing.com/",
+  "phone": "(865) 977-0769",
+  "city": "Maryville",
+  "county": "Blount",
+  "services": [
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.jimwhiteroofing.com/"
+ },
+ {
+  "name": "K & L Roofing",
+  "website": "https://www.klroofing.org/",
+  "phone": "(865) 724-4477",
+  "city": "Maryville",
+  "county": "Blount",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.klroofing.org/"
+ },
+ {
+  "name": "RC Roofing LLC",
+  "website": "https://www.rcroofingllc.com/",
+  "phone": "(865) 336-2374",
+  "city": "Maryville",
+  "county": "Blount",
+  "services": [
+   "commercial",
+   "flat",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.rcroofingllc.com/"
+ },
+ {
+  "name": "Valley Vista Construction, Inc.",
+  "website": "https://www.valleyvistaconstruction.com/",
+  "phone": "(865) 963-7003",
+  "city": "Maryville",
+  "county": "Blount",
+  "services": [
+   "commercial",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.valleyvistaconstruction.com/"
+ },
+ {
+  "name": "Dixie Roofing, Inc.",
+  "website": "http://dixieroofing.com/",
+  "phone": "(423) 562-0031",
+  "city": "LaFollette",
+  "county": "Campbell",
+  "services": [
+   "commercial",
+   "flat",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "http://dixieroofing.com/contact/"
+ },
+ {
+  "name": "Valley Roofing",
+  "website": "https://valleyroofingtn.com/",
+  "phone": "(423) 566-6561",
+  "city": "LaFollette",
+  "county": "Campbell",
+  "services": [
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://valleyroofingtn.com/"
+ },
+ {
+  "name": "William Maxwell Roofing",
+  "website": "https://www.williammaxwellroofing.com/",
+  "phone": "(423) 437-1632",
+  "city": "LaFollette",
+  "county": "Campbell",
+  "services": [
+   "commercial",
+   "flat",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.williammaxwellroofing.com/commercial"
+ },
+ {
+  "name": "Rock Star Roofing LLC",
+  "website": "https://rockstarroofingtn.com/",
+  "phone": "(865) 505-2591",
+  "city": "Dandridge",
+  "county": "Jefferson",
+  "services": [
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://rockstarroofingtn.com/"
+ },
+ {
+  "name": "Alpha Omega Construction Group, Inc.",
+  "website": "https://alpha-omegainc.com/",
+  "phone": "(844) 704-7663",
+  "city": "Jefferson City",
+  "county": "Jefferson",
+  "services": [
+   "commercial",
+   "gutters",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://alpha-omegainc.com/locations/"
+ },
+ {
+  "name": "Ballinger Construction Company",
+  "website": "https://ballingerpro.com/",
+  "phone": "(865) 262-0258",
+  "city": "Jefferson City",
+  "county": "Jefferson",
+  "services": [
+   "commercial",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://ballingerpro.com/"
+ },
+ {
+  "name": "Above All Roofing",
+  "website": "https://above-all-roofing.com/",
+  "phone": "(865) 342-9662",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://above-all-roofing.com/"
+ },
+ {
+  "name": "Allen's Roofing Inc.",
+  "website": "https://www.allensroofing.com/",
+  "phone": "(865) 377-3535",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.allensroofing.com/contact/"
+ },
+ {
+  "name": "Barnett Roofing",
+  "website": "https://barnettroofingknoxville.com/",
+  "phone": "(865) 323-2402",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://barnettroofingknoxville.com/contact-us/"
+ },
+ {
+  "name": "Bellator Roofing & Restoration",
+  "website": "https://www.bellatorroofingandrestoration.com/",
+  "phone": "(615) 934-1421",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.bellatorroofingandrestoration.com/"
+ },
+ {
+  "name": "Berkeley Roofing",
+  "website": "https://www.berkeleybuildersroofing.com/",
+  "phone": "(865) 323-4093",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "repair"
+  ],
+  "tn_license": null,
+  "source": "https://www.berkeleybuildersroofing.com/"
+ },
+ {
+  "name": "Best Brothers Roofing",
+  "website": "https://bestbrothersroofing.com/",
+  "phone": "(865) 444-4989",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://bestbrothersroofing.com/"
+ },
+ {
+  "name": "Best Choice Roofing",
+  "website": "https://bestchoiceroofing.com/locations/tennessee/knoxville-tn/",
+  "phone": "(865) 326-3872",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://bestchoiceroofing.com/locations/tennessee/knoxville-tn/"
+ },
+ {
+  "name": "CentiMark",
+  "website": "https://www.centimark.com/locations/knoxville-tennessee",
+  "phone": "(865) 312-7007",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "metal",
+   "repair",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.centimark.com/locations/knoxville-tennessee"
+ },
+ {
+  "name": "Cornerstone Construction Services, Inc",
+  "website": "https://www.cornerstoneconstructiontn.com/",
+  "phone": "(865) 769-9920",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.cornerstoneconstructiontn.com/"
+ },
+ {
+  "name": "Cover Pro Roofing",
+  "website": "https://coverproroofing.com/",
+  "phone": "(865) 999-7663",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://coverproroofing.com/locations/knoxville/"
+ },
+ {
+  "name": "DaBella",
+  "website": "https://dabella.us/",
+  "phone": "(865) 503-4465",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "gutters",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://dabella.us/locations/"
+ },
+ {
+  "name": "Daniel Hood Roofing",
+  "website": "https://danielhoodroofingsystems.com/",
+  "phone": "(865) 851-5002",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": "77512",
+  "source": "https://danielhoodroofingsystems.com/"
+ },
+ {
+  "name": "Erie Home",
+  "website": "https://eriehome.com/locations/roofing/knoxville-tn/",
+  "phone": "(865) 355-4888",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "metal",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://eriehome.com/locations/roofing/knoxville-tn/"
+ },
+ {
+  "name": "Exterior Home Solutions Roofing & Siding",
+  "website": "https://exteriorhomesolutions.com/",
+  "phone": "(865) 524-5888",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://exteriorhomesolutions.com/"
+ },
+ {
+  "name": "Falcon Roofing",
+  "website": "https://www.falconroofingtn.com/",
+  "phone": "(865) 455-8322",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.falconroofingtn.com/"
+ },
+ {
+  "name": "Feazel",
+  "website": "https://www.feazelinc.com/",
+  "phone": "(865) 339-3129",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.feazelinc.com/farragut-tn/"
+ },
+ {
+  "name": "FLOW Roofing",
+  "website": "https://www.flowroofing.com/",
+  "phone": "(865) 910-5530",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": "77562",
+  "source": "https://www.flowroofing.com/"
+ },
+ {
+  "name": "Gold Medal Roofing",
+  "website": "http://www.goldmedalroofing.com/",
+  "phone": "(800) 868-4834",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "http://www.goldmedalroofing.com/"
+ },
+ {
+  "name": "Innovative Roofing & Siding",
+  "website": "https://www.knoxvilleroofingandsiding.com/",
+  "phone": "(865) 688-2888",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.knoxvilleroofingandsiding.com/"
+ },
+ {
+  "name": "Knox City Roofs",
+  "website": "https://www.knoxcityroofs.com/",
+  "phone": "(865) 213-3636",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.knoxcityroofs.com/"
+ },
+ {
+  "name": "Lee & Owens Roofing",
+  "website": "https://www.leeowensroofing.com/",
+  "phone": "(865) 404-9005",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.leeowensroofing.com/"
+ },
+ {
+  "name": "Lifetime Quality Roofing and Exterior Services",
+  "website": "https://www.lifetimequalityroofing.com/",
+  "phone": "(865) 902-7663",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.lifetimequalityroofing.com/roofing-location/tennessee/farragut/"
+ },
+ {
+  "name": "Litespeed Construction",
+  "website": "https://litespeedconstruction.com/",
+  "phone": "(865) 297-3286",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://litespeedconstruction.com/"
+ },
+ {
+  "name": "McGuire Roofing",
+  "website": "https://mcguireroofing.com/",
+  "phone": "(865) 338-7663",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://mcguireroofing.com/"
+ },
+ {
+  "name": "MI Homesiding & Roofing",
+  "website": "https://mihomesidingllc.com/",
+  "phone": "(865) 243-1243",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://mihomesidingllc.com/metal-roofing-contractor-knoxville-tn/"
+ },
+ {
+  "name": "Mighty Dog Roofing of Knoxville",
+  "website": "https://www.mightydogroofing.com/knoxville",
+  "phone": "(865) 328-7564",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "gutters",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.mightydogroofing.com/knoxville"
+ },
+ {
+  "name": "Mo Shingles",
+  "website": "https://moshingles.com/",
+  "phone": "(865) 770-0506",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://moshingles.com/"
+ },
+ {
+  "name": "Mobley Brothers Roofing and Renovation",
+  "website": "https://www.mobleybros.com/",
+  "phone": "(865) 302-3744",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": "59116",
+  "source": "https://www.mobleybros.com/"
+ },
+ {
+  "name": "Modern Roofing USA",
+  "website": "https://modernroofingusa.com/locations/roofer-knoxville-tn/",
+  "phone": "(865) 420-4316",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://modernroofingusa.com/locations/roofer-knoxville-tn/"
+ },
+ {
+  "name": "Mountain View Exteriors",
+  "website": "https://mountainviewexteriors.com/",
+  "phone": "(865) 465-8056",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "gutters",
+   "metal"
+  ],
+  "tn_license": null,
+  "source": "https://mountainviewexteriors.com/contact-mountain-view-exteriors/"
+ },
+ {
+  "name": "Nunez Roofing LLC",
+  "website": "https://nunezroofingtn.com/",
+  "phone": "(865) 255-1477",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "metal",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://nunezroofingtn.com/"
+ },
+ {
+  "name": "Perimeter Roofing",
+  "website": "https://perimeterroofing.com/service-areas/tennessee/knoxville/",
+  "phone": "(865) 432-0262",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://perimeterroofing.com/service-areas/tennessee/knoxville/"
+ },
+ {
+  "name": "Pinpoint Roofing",
+  "website": "https://www.pinpointroofing.com/",
+  "phone": "(865) 287-6060",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.pinpointroofing.com/"
+ },
+ {
+  "name": "Rackley Roofing",
+  "website": "https://rackleyroofing.com/",
+  "phone": "(865) 761-8836",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair"
+  ],
+  "tn_license": null,
+  "source": "https://rackleyroofing.com/"
+ },
+ {
+  "name": "Rescue Roofing & Exteriors",
+  "website": "https://www.rescueroofexteriors.com/",
+  "phone": "(865) 424-7670",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "gutters",
+   "repair"
+  ],
+  "tn_license": null,
+  "source": "https://www.rescueroofexteriors.com/"
+ },
+ {
+  "name": "RMM of Knoxville",
+  "website": "https://www.hollandroofing.com/",
+  "phone": "(865) 334-5018",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair"
+  ],
+  "tn_license": null,
+  "source": "https://www.hollandroofing.com/location/knoxville-tennessee/"
+ },
+ {
+  "name": "Roofing by JMJ",
+  "website": "https://www.roofingbyjmj.com/",
+  "phone": "(865) 389-4258",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.roofingbyjmj.com/"
+ },
+ {
+  "name": "Roofing By RLI",
+  "website": "http://roofingbyrli.com/",
+  "phone": "(865) 670-7663",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "http://roofingbyrli.com/contact.asp"
+ },
+ {
+  "name": "Roofing Crew Knoxville",
+  "website": "https://roofingcrewknoxville.com/",
+  "phone": "(865) 353-5000",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "gutters",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": "8425",
+  "source": "https://roofingcrewknoxville.com/"
+ },
+ {
+  "name": "Simple Home Solutions, LLC",
+  "website": "https://simplehomesolutionstn.com/",
+  "phone": "(865) 313-1982",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "gutters",
+   "repair",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://simplehomesolutionstn.com/"
+ },
+ {
+  "name": "Smith Roofing & Exteriors",
+  "website": "https://smithroofingservice.com/",
+  "phone": "(865) 507-0033",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": "76231",
+  "source": "https://smithroofingservice.com/"
+ },
+ {
+  "name": "Southern Reeds Roofing & Exteriors",
+  "website": "https://www.southernreedsroofing.com/",
+  "phone": "(865) 313-1906",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.southernreedsroofing.com/"
+ },
+ {
+  "name": "Tony's Roofs",
+  "website": "https://tonysroofs.com/",
+  "phone": "(865) 455-3820",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://tonysroofs.com/contact/"
+ },
+ {
+  "name": "Tradesmen Roofing LLC",
+  "website": "https://www.tradesmenroofing.com/",
+  "phone": "(865) 440-8308",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "repair"
+  ],
+  "tn_license": "79610",
+  "source": "https://sites.google.com/tradesmenroofing.com/tradesmenroofing"
+ },
+ {
+  "name": "Trinity Services",
+  "website": "https://www.trinityrestorationtn.com/",
+  "phone": "(865) 459-2365",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.trinityrestorationtn.com/"
+ },
+ {
+  "name": "US Commercial Roofing",
+  "website": "https://www.uscommercialroofing.com/",
+  "phone": "(865) 766-3464",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "repair"
+  ],
+  "tn_license": null,
+  "source": "https://www.uscommercialroofing.com/"
+ },
+ {
+  "name": "Valor Roofing",
+  "website": "https://www.roofingbyvalor.com/",
+  "phone": "(865) 468-8726",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": "12481",
+  "source": "https://www.roofingbyvalor.com/"
+ },
+ {
+  "name": "Volunteer Building Services",
+  "website": "https://volunteerbuildingservice.com/",
+  "phone": "(865) 693-7052",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://volunteerbuildingservice.com/"
+ },
+ {
+  "name": "Volunteer Roofing and Siding",
+  "website": "https://www.volunteerroofingandsiding.com/",
+  "phone": "(865) 444-4987",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "metal",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.volunteerroofingandsiding.com/"
+ },
+ {
+  "name": "Weatherguard Roofing & Restoration",
+  "website": "https://wgrestoration.com/",
+  "phone": "(800) 797-5947",
+  "city": "Knoxville",
+  "county": "Knox",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://wgrestoration.com/service-areas/tennessee/knoxville/"
+ },
+ {
+  "name": "Norris Roofing of East Tennessee",
+  "website": "https://www.lenoircityroofing.com/",
+  "phone": "(865) 243-0025",
+  "city": "Lenoir City",
+  "county": "Loudon",
+  "services": [
+   "gutters",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.lenoircityroofing.com/"
+ },
+ {
+  "name": "Tri-Star Roofing & Renovations",
+  "website": "https://tristarrooftn.com/",
+  "phone": "(865) 208-1699",
+  "city": "Lenoir City",
+  "county": "Loudon",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://tristarrooftn.com/"
+ },
+ {
+  "name": "Adams Roofing LLC",
+  "website": "https://adamsroofingtenn.com/",
+  "phone": "(865) 986-2946",
+  "city": "Loudon",
+  "county": "Loudon",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://adamsroofingtenn.com/services/"
+ },
+ {
+  "name": "Mountain Metal Roofs",
+  "website": "https://www.mtmetalroofs.com/",
+  "phone": "(423) 592-4438",
+  "city": "Lancing",
+  "county": "Morgan",
+  "services": [
+   "gutters",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.mtmetalroofs.com/"
+ },
+ {
+  "name": "Woods Roofing & Repairs",
+  "website": "https://www.woodsroofingandrepairs.com/",
+  "phone": "(865) 204-0011",
+  "city": "Harriman",
+  "county": "Roane",
+  "services": [
+   "commercial",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://www.woodsroofingandrepairs.com/"
+ },
+ {
+  "name": "Kings Construction LLC",
+  "website": "https://www.kingsconstruction.llc/",
+  "phone": "(865) 422-9252",
+  "city": "Kodak",
+  "county": "Sevier",
+  "services": [
+   "gutters",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://www.kingsconstruction.llc/"
+ },
+ {
+  "name": "Alvarado Roofing & Construction",
+  "website": "https://alvaradoroofingandconstruction.com/",
+  "phone": "(865) 396-6465",
+  "city": "Sevierville",
+  "county": "Sevier",
+  "services": [
+   "commercial",
+   "flat",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://alvaradoroofingandconstruction.com/"
+ },
+ {
+  "name": "E & F Roofing",
+  "website": "https://ef-roofing.com/",
+  "phone": "(865) 398-7295",
+  "city": "Sevierville",
+  "county": "Sevier",
+  "services": [
+   "gutters",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://ef-roofing.com/"
+ },
+ {
+  "name": "Nicks Roofing",
+  "website": "https://nicks-roofing.com/",
+  "phone": "(865) 430-2599",
+  "city": "Sevierville",
+  "county": "Sevier",
+  "services": [
+   "commercial",
+   "flat",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://nicks-roofing.com/"
+ },
+ {
+  "name": "Peak Roofing (Adler Peak Enterprises)",
+  "website": "https://adlerpeakenterprises.com/roofing",
+  "phone": "(865) 505-3513",
+  "city": "Sevierville",
+  "county": "Sevier",
+  "services": [
+   "metal",
+   "repair",
+   "storm"
+  ],
+  "tn_license": null,
+  "source": "https://adlerpeakenterprises.com/roofing"
+ },
+ {
+  "name": "Romero Pro Roofing",
+  "website": "https://romeroproroofing.com/",
+  "phone": "(865) 246-9136",
+  "city": "Sevierville",
+  "county": "Sevier",
+  "services": [
+   "commercial",
+   "metal",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://romeroproroofing.com/"
+ },
+ {
+  "name": "Brian King Roofing Inc.",
+  "website": "https://briankingroofinginc.com/",
+  "phone": "(865) 573-6859",
+  "city": "Seymour",
+  "county": "Sevier",
+  "services": [
+   "commercial",
+   "flat",
+   "gutters",
+   "metal",
+   "repair",
+   "residential",
+   "storm"
+  ],
+  "tn_license": "66940",
+  "source": "https://briankingroofinginc.com/"
+ },
+ {
+  "name": "Wyrick Roofing",
+  "website": "https://wyrickroofing.com/",
+  "phone": "(865) 898-6411",
+  "city": "Maynardville",
+  "county": "Union",
+  "services": [
+   "commercial",
+   "metal",
+   "repair",
+   "residential"
+  ],
+  "tn_license": null,
+  "source": "https://wyrickroofing.com/"
+ }
+]
