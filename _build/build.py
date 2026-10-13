@@ -196,13 +196,13 @@ def head(title, description, path, *, schema=(), og_type='website', noindex=Fals
 
 
 NAV = [('/roof-replacement/', 'Roof Replacement'), ('/storm-damage-roof-repair/', 'Storm Damage'),
-       ('/service-areas/', 'Service Areas'), ('/roof-cost-calculator/', 'Cost Calculator')]
-MOBILE_NAV = NAV + [('/blog/', 'Homeowner Guides'), ('/contact/', 'Contact')]
+       ('/roofers/', 'Roofer Map'), ('/roof-cost-calculator/', 'Cost Calculator')]
+MOBILE_NAV = NAV + [('/service-areas/', 'Service Areas'), ('/blog/', 'Homeowner Guides'), ('/contact/', 'Contact')]
 
 
 def header(cta_href='#quote'):
     links = '\n'.join(f'                    <a href="{h}">{t}</a>' for h, t in NAV)
-    mobile_nav = MOBILE_NAV[:4] + [('/roofers/', 'Roofer Map')] + MOBILE_NAV[4:] if ROOFERS else MOBILE_NAV
+    mobile_nav = MOBILE_NAV
     mobile_links = '\n'.join(f'                        <a href="{h}">{t}</a>' for h, t in mobile_nav)
     return f'''    <!-- shared:header -->
     <header class="header">
