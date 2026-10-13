@@ -1,0 +1,343 @@
+{
+  "researched_on": "2026-10-13",
+  "licensing": [
+    {
+      "fact": "Tennessee requires a contractor's license before contracting, including bidding, offering to engage or negotiating a price, for projects of $25,000 or more when acting as a prime contractor, certain subcontractor, or construction manager/consultant.",
+      "source": "https://www.tn.gov/commerce/regboards/contractors/license/get/contractor.html"
+    },
+    {
+      "fact": "Subcontractors performing electrical, mechanical, plumbing, HVAC or roofing work also need a contractor's license when their portion of the project is $25,000 or more.",
+      "source": "https://www.tn.gov/commerce/regboards/contractors/license/get/contractor.html"
+    },
+    {
+      "fact": "The Board for Licensing Contractors' roofing classification is BC-21: 'Roofing over $25K, including gutters and vinyl siding.' New applicants must pass the Tennessee Business and Law exam.",
+      "source": "https://www.tn.gov/commerce/regboards/contractors/license/classification-outline.html"
+    },
+    {
+      "fact": "Licensed contractors have a monetary limit, calculated as 10 times the lesser of working capital or net worth; the law requires a CPA-reviewed or audited financial statement. Starting July 1, 2026, a Contractors' Surety Bond of at least 50% of the requested monetary limit can be used instead.",
+      "source": "https://www.tn.gov/commerce/regboards/contractors/license/get/contractor.html"
+    },
+    {
+      "fact": "A Tennessee Home Improvement license is required for residential remodeling projects from $3,000 to $24,999, only in counties that adopted the law: Bradley, Davidson, Hamilton, Haywood, Knox, Marion, Robertson, Rutherford and Shelby. Covered work explicitly includes roofing (repair, replacement, remodeling, alterations or additions to residential buildings).",
+      "source": "https://www.tn.gov/commerce/regboards/contractors/license/get/home-improvement.html"
+    },
+    {
+      "fact": "Knox County IS on the Home Improvement list. Neighboring Blount, Sevier, Anderson, Loudon, Jefferson, Roane, Union, Grainger, Campbell and Morgan counties are NOT on it, so the $3,000-$24,999 state license tier does not apply there.",
+      "source": "https://www.tn.gov/commerce/regboards/contractors/license/get/home-improvement.html"
+    },
+    {
+      "fact": "Home Improvement licensees must carry a $10,000 surety bond (or a cash/property bond or irrevocable letter of credit) plus general liability and workers' compensation insurance.",
+      "source": "https://www.tn.gov/commerce/regboards/contractors/license/get/home-improvement.html"
+    },
+    {
+      "fact": "For work under $25,000 (outside Home Improvement counties), TDCI advises consumers to check with their local building codes office about whether a state or local license and permits are needed.",
+      "source": "https://www.tn.gov/commerce/news/2024/10/22/tdci-shares-consumer-tips-to-avoid-scammers--fly-by-night-contractors-when-rebuilding-after-helene.html"
+    },
+    {
+      "fact": "Homeowners verify a Tennessee contractor or home improvement license with the state's online lookup at https://search.cloud.commerce.tn.gov/ (verify.tn.gov redirects there). Complaint/disciplinary history is available from the Board for Licensing Contractors at (800) 544-7693 or (615) 741-8307.",
+      "source": "https://www.tn.gov/commerce/regboards/contractors.html"
+    },
+    {
+      "fact": "TDCI: 'For home improvement projects, state law limits deposits to no more than one-third of the contract price.' TDCI also says don't pay cash, don't pay in full before work is done, and if a contractor needs money for materials, go with them and pay the supplier directly.",
+      "source": "https://www.tn.gov/commerce/news/2026/1/30/tdci-shares-insurance-safety-contractors-information-in-aftermath-of-winter-storm-fern.html"
+    },
+    {
+      "fact": "TDCI advises asking whether the licensed contractor will do the work with their own employees or subcontract it, getting at least three references and proof of licenses, permits, insurance and bonding, and recording the contractor's license plate and driver's license numbers.",
+      "source": "https://www.tn.gov/commerce/news/2026/1/30/tdci-shares-insurance-safety-contractors-information-in-aftermath-of-winter-storm-fern.html"
+    },
+    {
+      "fact": "Under Tennessee's felony theft law, a contractor who takes money and fails to perform the work within 90 days may face charges (per TDCI).",
+      "source": "https://www.tn.gov/commerce/news/2024/10/22/tdci-shares-consumer-tips-to-avoid-scammers--fly-by-night-contractors-when-rebuilding-after-helene.html"
+    },
+    {
+      "fact": "Permits: no official City of Knoxville or Knox County page confirming re-roof permit rules was retrieved. Only third-party permit guides were found (conflicting fees). Advise homeowners to ask the roofer who pulls any required permit and to check with the local codes office; do not state specific permit fees.",
+      "source": null
+    }
+  ],
+  "insurance_law": [
+    {
+      "fact": "Tennessee's residential roofing law (Tenn. Code Ann. 62-6-601 to -604, enacted 2012) applies to contracts with residential roofing services providers to repair or replace a roof on a 1-4 family home where costs are paid, or likely to be paid, in whole or part from a property and casualty insurance policy.",
+      "source": "https://codes.findlaw.com/tn/title-62-professions-businesses-and-trades/tn-code-sect-62-6-601/"
+    },
+    {
+      "fact": "62-6-603: Before entering the contract, the roofer must give the homeowner in writing a business mailing address for cancellations, phone number, any contractor, home improvement or public adjuster license/registration numbers held in any state, an email or fax for cancellations if available, and a detailed description of the damage and repairs covered. The contract must include a boldface cancellation statement and a detachable 'NOTICE OF CANCELLATION' form in duplicate.",
+      "source": "https://codes.findlaw.com/tn/title-62-professions-businesses-and-trades/tn-code-sect-62-6-603/"
+    },
+    {
+      "fact": "62-6-602: If the homeowner receives written notice from the insurer that all or any part of the claim is not covered, they may cancel the roofing contract by notice delivered before midnight on the third business day after receiving the insurer's notice. No special wording is needed; the notice must be signed, dated and show intent not to be bound.",
+      "source": "https://codes.findlaw.com/tn/title-62-professions-businesses-and-trades/tn-code-sect-62-6-602/"
+    },
+    {
+      "fact": "62-6-604: The roofer may not require payment under the contract until the insurer confirms coverage in writing or the cancellation period has passed; after a valid cancellation, payments must be returned within 10 business days, except charges for emergency repairs the homeowner acknowledged in writing as necessary. A roofer may not misrepresent that emergency repairs are necessary.",
+      "source": "https://codes.findlaw.com/tn/title-62-professions-businesses-and-trades/tn-code-sect-62-6-604/"
+    },
+    {
+      "fact": "The 2012 Tennessee law (sponsored by Sen. Bill Ketron) was passed in response to storm-related roofing complaints.",
+      "source": "https://amp.claimsjournal.com/news/southeast/2012/06/05/207963.htm"
+    },
+    {
+      "fact": "In Tennessee, no person or business may act or hold out as a public adjuster unless licensed by the Department of Commerce and Insurance (effective July 1, 2007). Public adjusters need a $50,000 surety bond and $500,000 E&O coverage.",
+      "source": "https://www.tn.gov/commerce/insurance/agent-producer-resources/licensing-packets-instructions-forms/public-adjuster.html"
+    },
+    {
+      "fact": "TDCI: public adjusters are paid from the settlement, usually a percentage; confirm the license, ask for references and get fees in writing. A contractor may meet with the homeowner and the insurance adjuster; if the contractor finds damage the adjuster missed, contact the insurer to resolve the difference. Mortgage lenders may hold structural-damage payments in escrow and release them as repairs are completed.",
+      "source": "https://www.tn.gov/news/2014/2/19/rebuilding-after-a-loss-managing-the-claims-experience.html"
+    },
+    {
+      "fact": "TDCI: file the claim as soon as possible (policies may have notification deadlines), provide complete information, photograph/video all damage. TDCI can mediate denied-claim complaints for policies written in Tennessee: 615-741-2218 or 1-800-342-4029.",
+      "source": "https://www.tn.gov/commerce/news/2026/1/30/tdci-shares-insurance-safety-contractors-information-in-aftermath-of-winter-storm-fern.html"
+    },
+    {
+      "fact": "TDCI warns: beware of contractors making door-to-door or telephone solicitations offering to repair roofs; don't be pressured to sign on the spot.",
+      "source": "https://www.tn.gov/commerce/news/2026/1/30/tdci-shares-insurance-safety-contractors-information-in-aftermath-of-winter-storm-fern.html"
+    },
+    {
+      "fact": "NOT FOUND: no Tennessee statute specifically banning roofers from waiving, absorbing or rebating insurance deductibles was found (such bans exist in other states, e.g. South Dakota, Texas). Do not claim Tennessee has one; treat deductible offers as a caution point only.",
+      "source": null
+    }
+  ],
+  "costs": {
+    "asphalt_3tab_per_sqft": [
+      3.5,
+      5.0
+    ],
+    "architectural_per_sqft": [
+      5.0,
+      10.5
+    ],
+    "metal_exposed_fastener_per_sqft": [
+      4.0,
+      14.0
+    ],
+    "metal_standing_seam_per_sqft": [
+      10.0,
+      16.0
+    ],
+    "flat_tpo_per_sqft": [
+      5.5,
+      12.0
+    ],
+    "repair_typical": [
+      395,
+      1968
+    ],
+    "knoxville_architectural_total_2000_sqft_roof": [
+      11500,
+      20000
+    ],
+    "tennessee_architectural_total_2000_sqft_roof": [
+      10000,
+      21000
+    ],
+    "tennessee_metal_general_per_sqft": [
+      9.0,
+      18.0
+    ],
+    "tennessee_metal_general_total_2000_sqft_roof": [
+      18000,
+      36000
+    ],
+    "tennessee_standing_seam_total_2000_sqft_roof": [
+      22000,
+      40000
+    ],
+    "national_replacement_average": 9609,
+    "national_replacement_normal_range": [
+      5902,
+      13378
+    ],
+    "national_replacement_per_sqft": [
+      4.0,
+      11.0
+    ],
+    "repair_details": {
+      "average": 1174,
+      "simple_low": 150,
+      "extensive_high": 8000,
+      "leak_repair": [
+        360,
+        1550
+      ],
+      "flashing_repair": [
+        200,
+        500
+      ],
+      "per_100_sqft_area": [
+        350,
+        1200
+      ]
+    },
+    "other_low_slope_per_sqft": {
+      "tpo_homeadvisor": [
+        4.5,
+        16.0
+      ],
+      "epdm": [
+        4.25,
+        12.0
+      ],
+      "modified_bitumen": [
+        2.5,
+        4.5
+      ],
+      "built_up": [
+        2.5,
+        4.0
+      ]
+    },
+    "other_metal_per_sqft": {
+      "exposed_fastener_steel_avg_roofobservations": 8.25,
+      "standing_seam_steel_avg_roofobservations": 12.75,
+      "corrugated_homeadvisor": [
+        3.5,
+        15.0
+      ],
+      "standing_seam_homeadvisor": [
+        7.0,
+        30.0
+      ],
+      "metal_shingles_homeadvisor": [
+        7.0,
+        22.0
+      ],
+      "exposed_fastener_westernstates_older": [
+        7.0,
+        12.0
+      ]
+    },
+    "derived_totals_2000_sqft_house": {
+      "roof_area_sqft": [
+        2200,
+        2400
+      ],
+      "asphalt_3tab": [
+        7700,
+        12000
+      ],
+      "architectural_tn": [
+        11000,
+        25200
+      ],
+      "metal_standing_seam": [
+        22000,
+        38400
+      ],
+      "method": "DERIVED, not quoted by a source: HomeAdvisor says roof area is roughly 1.1-1.2x the house's square footage, so a 2,000 sq ft house ~ 2,200-2,400 sq ft of roof; multiplied by the per-sq-ft ranges above. Applies most directly to a single-story footprint; a two-story 2,000 sq ft house has a smaller roof. Prefer the source-quoted Knoxville total ($11,500-$20,000 for a 2,000 sq ft architectural-shingle roof) on pages."
+    },
+    "notes": "All prices are installed cost per square foot of ROOF area (1 roofing square = 100 sq ft). 3-tab range is Modernize national (updated Sep 1, 2026); Modernize's national architectural range is $4-$8.50, but the Tennessee-specific Modernize guide (updated Aug 27, 2026) gives $5-$10.50, used here. HomeAdvisor (Jun 2026) lists architectural at $4-$6 and asphalt generally $3-$7. Exposed-fastener range uses Modernize's corrugated metal figure ($4-$14, updated Sep 23, 2026); Roof Observations (Jan 2026) gives averages of $8.25 exposed-fastener steel vs $12.75 standing seam steel. Standing seam $10-$16 is Modernize national; HomeAdvisor's $7-$30 is much wider. TPO $5.50-$12 is Modernize's TPO/PVC figure (Oct 12, 2026); HomeAdvisor TPO page gives $4.50-$16 (avg job $10,700). Repair typical range is HomeAdvisor national (Jun 19, 2026). Modernize's Knoxville metro row ($11,500-$20,000 for a 2,000 sq ft roof, architectural asphalt) is the only Knoxville-specific figure found; Angi/Forbes/This Old House Knoxville pages were blocked or unavailable. Modernize notes Knoxville costs are 'usually moderate' with steeper rooflines and older homes adding labor. Always present as rough ranges, not quotes.",
+    "sources": [
+      "https://modernize.com/roof/cost-calculator/tennessee",
+      "https://modernize.com/roof/shingles/asphalt-roofing-cost",
+      "https://modernize.com/roof/types/metal-cost",
+      "https://modernize.com/roof/types/flat",
+      "https://www.homeadvisor.com/cost/roofing/install-a-roof/",
+      "https://www.homeadvisor.com/cost/roofing/repair-a-roof/",
+      "https://www.homeadvisor.com/cost/roofing/tpo-roof/",
+      "https://www.homeadvisor.com/cost/roofing/metal-roof-installation/",
+      "https://roofobservations.com/steel-roof-cost-guide/",
+      "https://www.westernstatesmetalroofing.com/blog/standing-seam-metal-roofing-cost-price"
+    ]
+  },
+  "climate": [
+    {
+      "fact": "Knoxville (McGhee Tyson) average annual precipitation is 51.93 inches (1991-2020 normals); average snowfall 4.6 inches.",
+      "source": "https://www.weather.gov/mrx/tysclimate"
+    },
+    {
+      "fact": "Knoxville averages 68 days a year with a minimum temperature at or below 32 F (period of record) - frequent freeze-thaw cycles.",
+      "source": "https://www.weather.gov/mrx/tysclimate"
+    },
+    {
+      "fact": "NWS Morristown severe weather climatology: tornadoes peak in April with a slight secondary maximum in November; large hail peaks in May with a slight November maximum; in June the dominant severe weather type shifts to wind damage, and most summer severe weather is wind damage. Tornado, hail and wind events all peak in the afternoon around 4 p.m.",
+      "source": "https://www.weather.gov/mrx/severeclimo"
+    },
+    {
+      "fact": "Knoxville average relative humidity is 72% (about 85% in the morning, 54% in the afternoon), 1961-1990 averages; July mornings average about 90%.",
+      "source": "https://currentresults.com/Weather/Tennessee/humidity-annual.php"
+    },
+    {
+      "fact": "ARMA: brown-to-black roof streaks are usually algae, chiefly Gloeocapsa magma, an airborne algae that grows worst in warm, humid conditions. Algae-resistant shingles use copper-containing granules. Bleach-based cleaning only lightens stains temporarily; high-pressure washing should not be used and scrubbing loosens granules.",
+      "source": "https://iibec.org/publication-post/algae-discolorations-of-roofs/"
+    },
+    {
+      "fact": "Modernize's Tennessee guide: 'Moisture management and attic ventilation are especially important in East Tennessee's variable climate'; in Knoxville, steeper rooflines and older homes can add labor time.",
+      "source": "https://modernize.com/roof/cost-calculator/tennessee"
+    },
+    {
+      "fact": "InterNACHI: roof life depends on local weather, design, material quality and maintenance; hot climates significantly shorten asphalt shingle life and severe weather such as hail can shorten a roof's lifespan.",
+      "source": "https://www.nachi.org/life-expectancy.htm"
+    }
+  ],
+  "lifespans": [
+    {
+      "material": "Asphalt 3-tab shingles",
+      "years": "about 20 (InterNACHI); 15-20 or 18-20 (Modernize)",
+      "source": "https://www.nachi.org/life-expectancy.htm"
+    },
+    {
+      "material": "Architectural asphalt shingles",
+      "years": "about 30 (InterNACHI); 20-30 (Modernize)",
+      "source": "https://www.nachi.org/life-expectancy.htm"
+    },
+    {
+      "material": "Asphalt shingles (general)",
+      "years": "20-30 with routine upkeep (HomeAdvisor)",
+      "source": "https://www.homeadvisor.com/cost/roofing/install-a-roof/"
+    },
+    {
+      "material": "Metal",
+      "years": "40-80 (InterNACHI); 40-70 (HomeAdvisor); steel 40-60 (Roof Observations)",
+      "source": "https://www.nachi.org/life-expectancy.htm"
+    },
+    {
+      "material": "TPO",
+      "years": "7-20 (InterNACHI); 15-30, about 22 typical (HomeAdvisor)",
+      "source": "https://www.nachi.org/life-expectancy.htm"
+    },
+    {
+      "material": "EPDM",
+      "years": "15-25 (InterNACHI)",
+      "source": "https://www.nachi.org/life-expectancy.htm"
+    },
+    {
+      "material": "Modified bitumen",
+      "years": "about 20 (InterNACHI)",
+      "source": "https://www.nachi.org/life-expectancy.htm"
+    },
+    {
+      "material": "Built-up roofing (BUR)",
+      "years": "about 30 (InterNACHI)",
+      "source": "https://www.nachi.org/life-expectancy.htm"
+    }
+  ],
+  "site_costs": {
+    "architectural_per_sqft": [
+      5.75,
+      10.0
+    ],
+    "asphalt_3tab_per_sqft": [
+      3.5,
+      5.0
+    ],
+    "metal_exposed_fastener_per_sqft": [
+      7.0,
+      12.0
+    ],
+    "metal_standing_seam_per_sqft": [
+      10.0,
+      16.0
+    ],
+    "flat_tpo_per_sqft": [
+      5.5,
+      12.0
+    ],
+    "lifespans": {
+      "architectural_per_sqft": "20-30 years",
+      "asphalt_3tab_per_sqft": "15-20 years",
+      "metal_exposed_fastener_per_sqft": "40+ years",
+      "metal_standing_seam_per_sqft": "40-70 years",
+      "flat_tpo_per_sqft": "15-30 years"
+    }
+  },
+  "license_lookup_url": "https://verify.tn.gov/"
+}

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initFloatingCta();
     initThankYouTracking();
+    initCostCalculator();
 });
 
 // =============================================
@@ -30,14 +31,23 @@ function initLeadForm() {
     if (timestamp) timestamp.value = new Date().toISOString();
     const page = form.querySelector('[name="page"]');
     if (page) page.value = window.location.pathname;
+    const referrer = form.querySelector('[name="referrer"]');
+    if (referrer) referrer.value = document.referrer;
+    const utm = form.querySelector('[name="utm"]');
+    if (utm) {
+        const params = new URLSearchParams(window.location.search);
+        utm.value = ['utm_source', 'utm_medium', 'utm_campaign', 'gclid']
+            .filter(k => params.get(k)).map(k => `${k}=${params.get(k)}`).join('&');
+    }
+    const renterHint = form.querySelector('.renter-hint');
 
-    function show(index) {
+    function show(index, focus = true) {
         current = index;
         steps.forEach((step, i) => step.classList.toggle('is-active', i === index));
         if (backBtn) backBtn.hidden = index === 0;
         if (counter) counter.textContent = `Step ${index + 1} of ${steps.length}`;
         if (bar) bar.style.width = `${((index + 1) / steps.length) * 100}%`;
-        if (index > 0) {
+        if (focus && index > 0) {
             const first = steps[index].querySelector('input:not([type="radio"]):not([type="checkbox"])');
             if (first && window.matchMedia('(min-width: 769px)').matches) first.focus({ preventScroll: true });
         }
@@ -64,9 +74,19 @@ function initLeadForm() {
         return valid;
     }
 
+    let started = false;
     form.addEventListener('change', (e) => {
         const group = e.target.closest('.is-invalid');
         if (group) group.classList.remove('is-invalid');
+
+        if (!started && typeof gtag === 'function') {
+            started = true;
+            gtag('event', 'form_start', { form_location: form.querySelector('[name="location"]').value });
+        }
+
+        if (e.target.name === 'owner' && renterHint) {
+            renterHint.hidden = e.target.value !== 'Renter';
+        }
 
         // Picking a project on step 1 moves straight on.
         if (e.target.name === 'project' && current === 0) {
@@ -98,7 +118,9 @@ function initLeadForm() {
         submitLead(form);
     });
 
-    show(0);
+    // Service pages arrive with the project already chosen, so skip straight to step 2.
+    const preselected = form.querySelector('input[name="project"]:checked');
+    show(form.dataset.preselect && preselected ? 1 : 0, false);
 }
 
 async function submitLead(form) {
@@ -187,8 +209,28 @@ function initPhoneFormatting() {
 function initZipInput() {
     const zip = document.getElementById('zip');
     if (!zip) return;
-    zip.addEventListener('input', () => {
+    const hint = zip.parentElement.querySelector('.zip-hint');
+    let areas = null;
+
+    zip.addEventListener('input', async () => {
         zip.value = zip.value.replace(/\D/g, '').slice(0, 5);
+        if (!hint) return;
+        if (zip.value.length < 5) {
+            hint.textContent = '';
+            return;
+        }
+        if (!areas) {
+            try {
+                areas = await (await fetch('/zips.json')).json();
+            } catch (err) {
+                areas = {};
+            }
+        }
+        const area = areas[zip.value];
+        hint.textContent = area
+            ? `Great, we have roofers who serve ${area}.`
+            : 'Thanks. We\'ll check which local roofers cover this ZIP.';
+        hint.classList.toggle('is-match', Boolean(area));
     });
 }
 
@@ -229,4 +271,43 @@ function initFloatingCta() {
         entries.forEach(entry => cta.classList.toggle('is-hidden', entry.isIntersecting));
     }, { threshold: 0.15 });
     observer.observe(form);
+}
+
+// =============================================
+// ROOF COST CALCULATOR
+// =============================================
+
+function initCostCalculator() {
+    const card = document.getElementById('calculator');
+    if (!card) return;
+    const prices = JSON.parse(card.dataset.prices);
+    const pitch = { low: [1.06, 1], medium: [1.15, 1], steep: [1.32, 1.15] };
+    const money = n => '$' + (Math.round(n / 100) * 100).toLocaleString('en-US');
+    let tracked = false;
+
+    function update(userAction) {
+        const sqft = Math.min(Math.max(parseFloat(document.getElementById('calc-sqft').value) || 0, 0), 20000);
+        const stories = parseFloat(card.querySelector('[name="calc-stories"]:checked').value);
+        const [slope, labor] = pitch[card.querySelector('[name="calc-pitch"]:checked').value];
+        const material = document.getElementById('calc-material').value;
+        const garage = document.getElementById('calc-garage').checked ? 480 : 0;
+
+        const footprint = sqft / stories + garage;
+        const roofArea = footprint * slope * 1.1;
+        const [low, high] = prices[material];
+
+        document.getElementById('calc-range').textContent =
+            sqft ? `${money(roofArea * low * labor)} - ${money(roofArea * high * labor)}` : 'Enter your home size';
+        document.getElementById('calc-detail').textContent =
+            sqft ? `About ${Math.round(roofArea / 100)} squares (${Math.round(roofArea).toLocaleString('en-US')} sq ft of roof)` : '';
+
+        if (userAction && !tracked && typeof gtag === 'function') {
+            tracked = true;
+            gtag('event', 'calculator_used', { material });
+        }
+    }
+
+    card.addEventListener('input', () => update(true));
+    card.addEventListener('change', () => update(true));
+    update(false);
 }
