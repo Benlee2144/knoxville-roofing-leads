@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initThankYouTracking();
     initCostCalculator();
     initContactTracking();
+    initBadgeCopy();
 });
 
 // =============================================
@@ -335,7 +336,8 @@ function initCostCalculator() {
 function initContactTracking() {
     document.addEventListener('click', (e) => {
         const link = e.target.closest('a[href^="tel:"], a[href^="sms:"]');
-        if (!link || typeof gtag !== 'function') return;
+        // Roofer listings on the map are tracked separately in roofer-map.js.
+        if (!link || link.dataset.roofer !== undefined || typeof gtag !== 'function') return;
         gtag('event', link.href.startsWith('tel:') ? 'phone_click' : 'text_click', {
             link_location: link.dataset.loc || link.closest('header, footer, .floating-cta, main, section')?.className.split(' ')[0] || 'page'
         });
@@ -362,4 +364,20 @@ function celebrate() {
         document.body.appendChild(piece);
         piece.addEventListener('animationend', () => piece.remove());
     }
+}
+
+function initBadgeCopy() {
+    document.querySelectorAll('.badge-copy').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const code = btn.parentElement.querySelector('.badge-code');
+            code.select();
+            try {
+                await navigator.clipboard.writeText(code.value);
+            } catch (err) {
+                document.execCommand('copy');
+            }
+            btn.textContent = 'Copied!';
+            setTimeout(() => { btn.textContent = 'Copy code'; }, 2000);
+        });
+    });
 }

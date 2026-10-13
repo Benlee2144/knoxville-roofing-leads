@@ -53,7 +53,7 @@ def write(rel_path, content):
 
 def asset_version():
     h = hashlib.sha1()
-    for name in ('styles.css', 'script.js'):
+    for name in ('styles.css', 'script.js', 'roofer-map.js'):
         with open(os.path.join(ROOT, name), 'rb') as f:
             h.update(f.read())
     return h.hexdigest()[:10]
@@ -132,6 +132,8 @@ LOC = {d['slug']: d for d in LOCATIONS}
 SERVICE_DATA = {d['slug']: d for d in load('services.json', [])}
 FACTS = load('facts.json', {})
 POSTS = load('blog.json', [])
+ROOFERS = []   # filled in main() from _build/data/roofers.json
+RF = None      # the roofers module, imported in main()
 POST = {p['slug']: p for p in POSTS}
 
 
@@ -148,7 +150,7 @@ def jsonld(obj):
 
 
 def head(title, description, path, *, schema=(), og_type='website', noindex=False, ads=False,
-         image='/images/og-image.jpg'):
+         image='/images/og-image.jpg', extra_head=''):
     url = SITE + path
     robots = 'noindex, follow' if noindex else 'index, follow, max-image-preview:large'
     parts = [f'''<!DOCTYPE html>
@@ -184,6 +186,8 @@ def head(title, description, path, *, schema=(), og_type='website', noindex=Fals
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css?v={VERSION}">''']
+    if extra_head:
+        parts.append(extra_head)
     parts += [jsonld(s) for s in schema]
     if ads:
         parts.append(f'    <!-- Google AdSense -->\n    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE}" crossorigin="anonymous"></script>')
@@ -198,7 +202,8 @@ MOBILE_NAV = NAV + [('/blog/', 'Homeowner Guides'), ('/contact/', 'Contact')]
 
 def header(cta_href='#quote'):
     links = '\n'.join(f'                    <a href="{h}">{t}</a>' for h, t in NAV)
-    mobile_links = '\n'.join(f'                        <a href="{h}">{t}</a>' for h, t in MOBILE_NAV)
+    mobile_nav = MOBILE_NAV[:4] + [('/roofers/', 'Roofer Map')] + MOBILE_NAV[4:] if ROOFERS else MOBILE_NAV
+    mobile_links = '\n'.join(f'                        <a href="{h}">{t}</a>' for h, t in mobile_nav)
     return f'''    <!-- shared:header -->
     <header class="header">
         <div class="container header-content">
@@ -260,6 +265,7 @@ def footer():
                 </div>
                 <div class="footer-col">
                     <h4>Resources</h4>
+                    {'<a href="/roofers/">East Tennessee Roofer Map</a>' if ROOFERS else ''}
                     <a href="/roof-cost-calculator/">Roof Cost Calculator</a>
                     <a href="/compare-roofing-quotes/">Quote Comparison Worksheet</a>
                     <a href="/blog/">Homeowner Guides</a>
@@ -706,6 +712,7 @@ def location_page(d):
         </div>
     </section>''',
         towns,
+        RF.location_block(globals(), ROOFERS, d) if RF else '',
         services_grid(name),
         cost_snapshot(name),
         faq_html,
@@ -1090,6 +1097,9 @@ def zips_json():
 
 
 def main():
+    global ROOFERS, RF
+    import roofers as RF  # noqa: E402
+    ROOFERS = RF.load(globals())
     for d in LOCATIONS:
         location_page(d)
     for d in SERVICE_DATA.values():
@@ -1102,10 +1112,12 @@ def main():
         service_areas_page()
     import pages  # noqa: E402  (hub/legal/calculator pages live in pages.py)
     pages.build(globals())
+    RF.build(globals())
     refresh_shared('index.html', form_args={'source': BRAND, 'location': 'Knoxville, TN', 'zip_hint': '37919'}, home=True)
     zips_json()
     n = sitemap()
-    print(f'built {len(LOCATIONS)} locations, {len(SERVICE_DATA)} services, {len(POSTS)} posts; sitemap {n} urls; assets v={VERSION}')
+    print(f'built {len(LOCATIONS)} locations, {len(SERVICE_DATA)} services, {len(POSTS)} posts, {len(ROOFERS)} roofers; '
+          f'sitemap {n} urls; assets v={VERSION}')
 
 
 if __name__ == '__main__':

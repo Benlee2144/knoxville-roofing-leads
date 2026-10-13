@@ -4369,3 +4369,320 @@ a.area-link:hover,
                           url('/images/hero-roof-800.webp');
     }
 }
+
+/* =============================================
+   ROOFER MAP / DIRECTORY
+   ============================================= */
+
+.page-intro a {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.map-section {
+    padding: 36px 0 20px;
+    background: var(--white);
+}
+
+.map-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.map-filters input,
+.map-filters select {
+    padding: 13px 14px;
+    border: 2px solid #e3e7ed;
+    border-radius: var(--radius-sm);
+    font: inherit;
+    background: var(--white);
+}
+
+.map-filters input:focus,
+.map-filters select:focus {
+    outline: none;
+    border-color: var(--orange);
+}
+
+.map-count {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--orange-ink);
+    white-space: nowrap;
+}
+
+.roofer-map {
+    height: 560px;
+    border-radius: var(--radius-lg);
+    border: 3px solid var(--charcoal);
+    box-shadow: var(--shadow-md);
+    z-index: 0;
+}
+
+.map-note {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.map-note a {
+    color: var(--orange-ink);
+}
+
+.roofer-pin span {
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin: 0 auto;
+    border-radius: 50% 50% 50% 0;
+    background: var(--orange);
+    border: 3px solid var(--charcoal);
+    transform: rotate(-45deg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.roofer-pin span::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--charcoal);
+}
+
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+    background-color: rgba(255, 130, 0, 0.35) !important;
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+    background-color: var(--orange) !important;
+    color: var(--charcoal);
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.roofer-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 200px;
+    font-family: 'Inter', sans-serif;
+}
+
+.roofer-popup strong {
+    font-size: 1rem;
+    color: var(--charcoal);
+}
+
+.roofer-popup-city,
+.roofer-popup-services {
+    font-size: 0.82rem;
+    color: var(--text-light);
+}
+
+.roofer-popup-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.roofer-popup-links a {
+    color: var(--orange-ink) !important;
+    font-weight: 700;
+}
+
+.roofer-popup-cta {
+    margin-top: 6px;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    background: var(--orange);
+    color: var(--charcoal) !important;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.roofer-list-section,
+.local-roofers-section {
+    padding: 50px 0 70px;
+    background: var(--bg-light);
+}
+
+.roofer-county + .roofer-county {
+    margin-top: 48px;
+}
+
+.roofer-county-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.roofer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.roofer-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid #e9ecef;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.roofer-card:hover {
+    box-shadow: inset 0 4px 0 var(--orange), var(--shadow-md);
+}
+
+.roofer-card[hidden],
+.roofer-county[hidden],
+.roofer-empty[hidden] {
+    display: none;
+}
+
+.roofer-card h3 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.roofer-city {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    color: var(--text-light);
+}
+
+.roofer-city .icon {
+    width: 14px;
+    height: 14px;
+    color: var(--orange-strong);
+}
+
+.roofer-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.roofer-tag {
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    background: var(--orange-tint);
+    color: var(--orange-ink);
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.roofer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    margin-top: auto;
+    padding-top: 6px;
+}
+
+.roofer-links a,
+.roofer-locate {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--orange-ink);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.roofer-links .icon,
+.roofer-locate .icon {
+    width: 15px;
+    height: 15px;
+}
+
+.roofer-links a:hover,
+.roofer-locate:hover {
+    text-decoration: underline;
+}
+
+.roofer-empty {
+    padding: 30px;
+    text-align: center;
+    color: var(--text-medium);
+}
+
+.getlisted-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 40px;
+    align-items: start;
+}
+
+.badge-card img {
+    display: block;
+    margin: 14px 0;
+}
+
+.badge-code {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e3e7ed;
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+    font-size: 0.78rem;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.contact-form select {
+    padding: 14px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: var(--radius-sm);
+    font: inherit;
+    background: var(--white);
+}
+
+@media (max-width: 900px) {
+    .map-filters {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .map-filters input {
+        grid-column: 1 / -1;
+    }
+
+    .getlisted-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .roofer-map {
+        height: 440px;
+    }
+}
+
+.roofer-pin span {
+    position: relative;
+}
