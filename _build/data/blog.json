@@ -32,9 +32,11 @@
     "h1": "Chimney Flashing Repair: What You Need to Know",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 5,
+    "read_minutes": 4,
     "category": "Maintenance & Repairs",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "commercial-roofing-knoxville",
@@ -43,9 +45,11 @@
     "h1": "Commercial Roofing in Knoxville: A Guide for Business Owners",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 8,
+    "read_minutes": 5,
     "category": "Commercial Roofing",
-    "service": "commercial-roofing"
+    "service": "commercial-roofing",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "diy-roof-repairs-avoid",
@@ -54,9 +58,11 @@
     "h1": "DIY Roof Repairs: What to Try vs What to Avoid",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 5,
+    "read_minutes": 4,
     "category": "Maintenance & Repairs",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "emergency-roof-tarp",
@@ -65,9 +71,11 @@
     "h1": "How to Emergency Tarp a Damaged Roof",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 5,
+    "read_minutes": 4,
     "category": "Storm Damage & Insurance",
-    "service": "emergency-roof-repair"
+    "service": "emergency-roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "flat-roof-problems",
@@ -76,9 +84,11 @@
     "h1": "Common Flat Roof Problems and How to Fix Them",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 6,
+    "read_minutes": 4,
     "category": "Commercial Roofing",
-    "service": "commercial-roofing"
+    "service": "commercial-roofing",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "gutter-maintenance-guide",
@@ -87,9 +97,11 @@
     "h1": "Gutter Maintenance: What Every Homeowner Needs to Know",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 5,
+    "read_minutes": 4,
     "category": "Maintenance & Repairs",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "hail-damage-what-to-know",
@@ -98,9 +110,11 @@
     "h1": "Hail Damage on Roofs: What Knoxville Homeowners Need to Know",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 6,
+    "read_minutes": 5,
     "category": "Storm Damage & Insurance",
-    "service": "storm-damage-roof-repair"
+    "service": "storm-damage-roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "how-long-roof-replacement-takes",
@@ -109,9 +123,11 @@
     "h1": "How Long Does a Roof Replacement Actually Take?",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 5,
+    "read_minutes": 4,
     "category": "Costs & Planning",
-    "service": "roof-replacement"
+    "service": "roof-replacement",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "metal-roof-pros-cons",
