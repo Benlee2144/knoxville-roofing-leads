@@ -90,6 +90,8 @@ ICONS = {
     'x-circle': '<circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/>',
     'phone': '<path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>',
     'message': '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+    'waves': '<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>',
+    'banknote': '<rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/>',
 }
 
 
@@ -102,16 +104,19 @@ def icon(name, cls='icon'):
 # Site structure
 # ---------------------------------------------------------------------------
 
-SERVICES = [
+ALL_SERVICES = [
     ('roof-replacement', 'Roof Replacement', 'house', 'Tear-off and new shingles or metal, with up to 3 quotes to compare.'),
-    ('roof-repair', 'Roof Repair', 'hammer', 'Leaks, missing shingles, flashing, vent boots and worn spots.'),
+    ('roof-repair', 'Roof Repair', 'hammer', 'Missing shingles, flashing, vent boots and worn spots.'),
+    ('roof-leak-repair', 'Roof Leak Repair', 'droplets', 'Track down the source of a leak and fix it properly.'),
     ('storm-damage-roof-repair', 'Storm & Hail Damage', 'cloud-lightning', 'Wind and hail inspections, repairs and photo documentation.'),
     ('roof-insurance-claims', 'Insurance Claims', 'clipboard-check', 'Roofers who know how to document damage for your adjuster.'),
     ('emergency-roof-repair', 'Emergency Repairs', 'alert', 'Active leaks, fallen trees and tarping after a storm.'),
+    ('roof-inspection', 'Roof Inspection', 'search', 'Inspections after storms and when buying or selling a home.'),
     ('metal-roofing', 'Metal Roofing', 'layers', 'Standing seam and exposed-fastener metal for homes and barns.'),
+    ('gutters', 'Gutters', 'waves', 'Seamless gutters, guards and downspouts that protect your roof.'),
     ('commercial-roofing', 'Commercial Roofing', 'building', 'Flat roofs, TPO, EPDM, coatings and metal for businesses.'),
+    ('roof-financing', 'Roof Financing', 'banknote', 'How homeowners pay for a roof: insurance, financing and loans.'),
 ]
-SERVICE_NAMES = {s[0]: s[1] for s in SERVICES}
 
 COUNTY_ORDER = ['knox-county', 'blount-county', 'anderson-county', 'loudon-county', 'sevier-county',
                 'jefferson-county', 'roane-county', 'union-county', 'grainger-county', 'campbell-county', 'morgan-county']
@@ -130,6 +135,10 @@ for name in ('existing.json', 'cities_a.json', 'cities_b.json', 'counties.json')
     LOCATIONS += load(name, [])
 LOC = {d['slug']: d for d in LOCATIONS}
 SERVICE_DATA = {d['slug']: d for d in load('services.json', [])}
+SERVICES = [s for s in ALL_SERVICES if s[0] in SERVICE_DATA]   # only services that have a page
+SERVICE_NAMES = {s[0]: s[1] for s in ALL_SERVICES}
+TOWN_SERVICES = {d['slug']: d for d in load('town_services.json', [])}
+TOWN_SERVICE_PROJECT = {'roof-replacement': 'Roof replacement', 'roof-repair': 'Roof repair', 'roof-leak-repair': 'Roof leak'}
 FACTS = load('facts.json', {})
 POSTS = load('blog.json', [])
 ROOFERS = []   # filled in main() from _build/data/roofers.json
@@ -197,7 +206,7 @@ def head(title, description, path, *, schema=(), og_type='website', noindex=Fals
 
 NAV = [('/roof-replacement/', 'Roof Replacement'), ('/storm-damage-roof-repair/', 'Storm Damage'),
        ('/roofers/', 'Roofer Map'), ('/roof-cost-calculator/', 'Cost Calculator')]
-MOBILE_NAV = NAV + [('/service-areas/', 'Service Areas'), ('/blog/', 'Homeowner Guides'), ('/contact/', 'Contact')]
+MOBILE_NAV = NAV + [('/service-areas/', 'Service Areas'), ('/blog/', 'Homeowner Guides'), ('/about/', 'About Us'), ('/contact/', 'Contact')]
 
 
 def header(cta_href='#quote'):
@@ -269,6 +278,7 @@ def footer():
                     <a href="/roof-cost-calculator/">Roof Cost Calculator</a>
                     <a href="/compare-roofing-quotes/">Quote Comparison Worksheet</a>
                     <a href="/blog/">Homeowner Guides</a>
+                    <a href="/about/">About Us</a>
                     <a href="/how-it-works/">How It Works</a>
                     <a href="/contact/">Contact</a>
                     <a href="/privacy/">Privacy Policy</a>
@@ -512,8 +522,10 @@ GENERAL_FAQS = [
 ]
 
 
-def services_grid(place=None):
-    cards = '\n'.join(f'''                <a href="/{slug}/" class="service-link-card">
+def services_grid(place=None, town=None):
+    def href(slug):
+        return f'/{town}/{slug}/' if town and f'{town}/{slug}' in TOWN_SERVICES else f'/{slug}/'
+    cards = '\n'.join(f'''                <a href="{href(slug)}" class="service-link-card">
                     <span class="service-link-icon">{icon(ic)}</span>
                     <span class="service-link-text"><strong>{name}</strong><span>{blurb}</span></span>
                 </a>''' for slug, name, ic, blurb in SERVICES)
@@ -714,7 +726,7 @@ def location_page(d):
     </section>''',
         towns,
         RF.location_block(globals(), ROOFERS, d) if RF else '',
-        services_grid(name),
+        services_grid(name, town=slug),
         cost_snapshot(name),
         faq_html,
         nearby_html,
@@ -778,9 +790,14 @@ def service_page(d):
     </section>'''
 
     counties = link_tags([c for c in COUNTY_ORDER if c in LOC])
+    town_links = ''.join(f'<a class="area-link" href="/{o["town"]}/{slug}/">{icon("map-pin")}{esc(LOC[o["town"]]["name"])}</a>'
+                         for o in TOWN_SERVICES.values() if o['service'] == slug)
+    town_block = f'''
+            <h2 class="nearby-title">{esc(d["name"])} by Town</h2>
+            <div class="area-link-grid">{town_links}</div>''' if town_links else ''
     areas = f'''    <section class="nearby-section">
-        <div class="container">
-            <h2 class="nearby-title">{esc(d["name"])} Quotes Across East Tennessee</h2>
+        <div class="container">{town_block}
+            <h2 class="nearby-title"{' style="margin-top:32px"' if town_links else ''}>{esc(d["name"])} Quotes Across East Tennessee</h2>
             <div class="area-link-grid"><a class="area-link" href="/">{icon("map-pin")}Knoxville</a>{counties}</div>
         </div>
     </section>'''
@@ -812,6 +829,98 @@ def service_page(d):
         scripts(),
     ]
     write(f'{slug}/index.html', '\n'.join(p for p in page if p))
+
+
+def repair_costs_section(place):
+    c = (FACTS.get('costs') or {})
+    rd = c.get('repair_details') or {}
+    rows = []
+    if c.get('repair_typical'):
+        rows.append(('Typical roof repair', c['repair_typical']))
+    if rd.get('leak_repair'):
+        rows.append(('Roof leak repair', rd['leak_repair']))
+    if rd.get('flashing_repair'):
+        rows.append(('Flashing repair', rd['flashing_repair']))
+    if not rows:
+        return ''
+    body = ''.join(f'<tr><td>{label}</td><td>${lo:,.0f} - ${hi:,.0f}</td></tr>' for label, (lo, hi) in rows)
+    return f'''    <section class="cost-section">
+        <div class="container narrow">
+            <span class="section-badge">BUDGETING</span>
+            <h2 class="section-title left">What Roof Repairs Cost Around {esc(place)}</h2>
+            <p class="section-lead">National ranges reported by HomeAdvisor. Small fixes can cost less; repairs that uncover rotten decking or a failed valley can cost more. A written quote is the only way to know.</p>
+            <div class="table-wrap">
+                <table class="data-table"><thead><tr><th>Repair</th><th>Typical range</th></tr></thead><tbody>{body}</tbody></table>
+            </div>
+            <p class="table-note">Source: <a href="https://www.homeadvisor.com/cost/roofing/repair-a-roof/" rel="noopener" target="_blank">HomeAdvisor roof repair cost guide</a>.</p>
+        </div>
+    </section>'''
+
+
+def town_service_page(d):
+    town, svc = d['town'], d['service']
+    t = LOC[town]
+    name, sname = t['name'], SERVICE_NAMES[svc]
+    path = f'/{town}/{svc}/'
+    cslug = county_slug_of(t)
+    crumbs = [('Home', '/'), ('Service Areas', '/service-areas/')]
+    if cslug in LOC:
+        crumbs.append((LOC[cslug]['name'], f'/{cslug}/'))
+    crumbs += [(name, f'/{town}/'), (sname, path)]
+    crumb_html, crumb_schema = breadcrumbs(crumbs)
+    faq_html, faq_schema = faq_section(d['faqs'] + GENERAL_FAQS[:1], f'{sname} in {name}: Questions')
+    form = lead_form(f'{BRAND} - {name} {sname}', t['full_name'], t['zip'], preselect=TOWN_SERVICE_PROJECT[svc],
+                     title=f'Get {sname} Quotes' if len(sname) <= 18 else 'Get Your Free Quotes')
+    features = [f'Roofers who work in {name}', 'Licensed & insured contractors', 'Free, no-obligation estimates']
+    checklist = ''.join(f'<li>{icon("check")}<span>{esc(c)}</span></li>' for c in d.get('checklist', []))
+    siblings = ''.join(f'<li><a href="/{town}/{s}/">{esc(SERVICE_NAMES[s])} in {esc(name)}</a></li>'
+                       for s in TOWN_SERVICE_PROJECT if s != svc and f'{town}/{s}' in TOWN_SERVICES)
+    aside = f'''            <aside class="content-aside">
+                <div class="aside-card">
+                    <h3>Before you sign: checklist</h3>
+                    <ul class="check-list">{checklist}</ul>
+                </div>
+                <div class="aside-card">
+                    <h3>More in {esc(name)}</h3>
+                    <ul class="link-list">{siblings}<li><a href="/{town}/">Roofing in {esc(name)}</a></li><li><a href="/{svc}/">{esc(sname)} across East Tennessee</a></li></ul>
+                </div>
+                <a href="#quote" class="btn-primary btn-block">Get {esc(name)} Quotes</a>
+            </aside>'''
+    others = [o for o in TOWN_SERVICES.values() if o['service'] == svc and o['town'] != town]
+    other_links = ''.join(f'<a class="area-link" href="/{o["town"]}/{svc}/">{icon("map-pin")}{esc(LOC[o["town"]]["name"])}</a>' for o in others)
+    nearby_html = f'''    <section class="nearby-section">
+        <div class="container">
+            <h2 class="nearby-title">{esc(sname)} in Nearby Towns</h2>
+            <div class="area-link-grid">{other_links}<a class="area-link" href="/{svc}/">{icon("map-pin")}All of East Tennessee</a></div>
+        </div>
+    </section>'''
+    costs = cost_snapshot(name) if svc == 'roof-replacement' else repair_costs_section(name)
+    schema = service_schema(f'{sname} in {t["full_name"]}', t['full_name'], path, d['meta_description'])
+    page = [
+        head(d['title'], d['meta_description'], path, schema=[schema, faq_schema, crumb_schema]),
+        '<body>',
+        header(),
+        hero(d['badge'], d['h1'], d['hero_subtitle'], features, form, 'service-hero'),
+        crumb_html,
+        proof_bar(),
+        f'''    <section class="content-section">
+        <div class="container content-layout">
+            <div class="prose">
+                {prose(d['sections'], d['intro'])}
+            </div>
+{aside}
+        </div>
+    </section>''',
+        RF.location_block(globals(), ROOFERS, t) if RF else '',
+        costs,
+        faq_html,
+        nearby_html,
+        final_cta(name),
+        footer(),
+        floating_cta(),
+        scripts(),
+    ]
+    write(f'{town}/{svc}/index.html', '\n'.join(p for p in page if p))
 
 
 # ---------------------------------------------------------------------------
@@ -1109,6 +1218,9 @@ def main():
         location_page(d)
     for d in SERVICE_DATA.values():
         service_page(d)
+    for d in TOWN_SERVICES.values():
+        if d['town'] in LOC:
+            town_service_page(d)
     for p in POSTS:
         blog_post(p)
     if POSTS:
@@ -1121,7 +1233,8 @@ def main():
     refresh_shared('index.html', form_args={'source': BRAND, 'location': 'Knoxville, TN', 'zip_hint': '37919'}, home=True)
     zips_json()
     n = sitemap()
-    print(f'built {len(LOCATIONS)} locations, {len(SERVICE_DATA)} services, {len(POSTS)} posts, {len(ROOFERS)} roofers; '
+    print(f'built {len(LOCATIONS)} locations, {len(SERVICE_DATA)} services, {len(TOWN_SERVICES)} town+service, '
+          f'{len(POSTS)} posts, {len(ROOFERS)} roofers; '
           f'sitemap {n} urls; assets v={VERSION}')
 
 

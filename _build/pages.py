@@ -236,6 +236,37 @@ def build(g):
                 'How our free roofing quote service works: tell us about your roof, get matched with up to 3 licensed local roofers, and compare quotes with no obligation.',
                 'How It Works', 'A free, no-pressure way for East Tennessee homeowners to compare roofing quotes.', how)
 
+    # ------------------------------------------------------------------ about
+    about = f'''    <section class="content-section">
+        <div class="container narrow prose">
+            <h2>Who runs this site</h2>
+            <p>{brand} is run by {g['CONTACT_NAME']}. If you have a question about your roof, your quote request or this site, you can call or text {g['CONTACT_NAME']} directly at <a href="tel:{g['PHONE_TEL']}">{g['PHONE_DISPLAY']}</a>.</p>
+            <h2>Why it exists</h2>
+            <p>Getting a fair price on a roof usually means calling around, waiting for callbacks and trying to compare quotes that don't line up. This site does the first part for you: tell us about your roof once, and up to 3 licensed, insured local roofers who handle your kind of work reach out with free estimates. You compare them and decide, or decide not to hire anyone.</p>
+            <h2>What we are, and what we aren't</h2>
+            <ul>
+                <li>We are a free referral service for homeowners and property owners in Knoxville and the surrounding East Tennessee counties.</li>
+                <li>We are not a roofing company. We don't send crews, sell materials or do the work.</li>
+                <li>We don't sell your information to marketing lists. Your request goes only to the roofers matched to your project.</li>
+            </ul>
+            <h2>How we make money</h2>
+            <p>Roofing contractors in our network pay us for introductions. That's why the service is free for homeowners. It also gives us every reason to send your request only to roofers who are a good fit.</p>
+            <h2>How we keep our information honest</h2>
+            <ul>
+                <li>Prices, Tennessee laws and local facts in our guides come from published sources, and we link to them.</li>
+                <li>We don't publish made-up reviews, ratings or savings claims.</li>
+                <li>Listings on our <a href="/roofers/">East Tennessee Roofer Map</a> come from each company's own website, and companies can ask us to update or remove them.</li>
+                <li>We review and update our guides when prices, laws or advice change.</li>
+            </ul>
+            <h2>Get in touch</h2>
+            <p>Call or text <a href="tel:{g['PHONE_TEL']}">{g['PHONE_DISPLAY']}</a>, use our <a href="/contact/">contact page</a>, or <a href="/#quote">request free roofing quotes</a>.</p>
+        </div>
+    </section>'''
+    simple_page('/about/', f'About Us | {brand}',
+                f'{brand} is a free roofing quote referral service for Knoxville and East Tennessee, run by {g["CONTACT_NAME"]}. How it works, how we make money and how we keep information honest.',
+                f'About {brand}', 'A free, honest way for East Tennessee homeowners to compare roofing quotes.', about,
+                schema=[{'@context': 'https://schema.org', '@type': 'AboutPage', 'name': f'About {brand}', 'url': site + '/about/'}])
+
     # ------------------------------------------------------------------ privacy
     privacy = f'''    <section class="content-section">
         <div class="container narrow prose legal">
