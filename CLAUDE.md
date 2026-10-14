@@ -11,11 +11,12 @@ python3 _build/build.py
 ```
 
 - `_build/build.py` renders city/county pages, service pages, blog posts, the blog index and service-areas hub, refreshes the homepage's shared blocks, and writes `sitemap.xml` and `zips.json`. It also stamps a content hash onto every `styles.css?v=` / `script.js?v=` link so browsers never mix old CSS with new HTML.
-- `_build/pages.py` holds one-off pages: cost calculator, quote worksheet, how it works, privacy, terms, contact, 404, thank-you.
-- Data lives in `_build/data/`: `existing.json`, `cities_a.json`, `cities_b.json`, `counties.json` (locations), `services.json`, `blog.json` (post metadata), `facts.json` (sourced Tennessee licensing/insurance/cost facts; `site_costs` feeds the calculator and cost tables).
-- Blog article bodies live in `_build/blog/<slug>.html`. To add a post: add the body file and an entry in `blog.json`, then build.
+- `_build/pages.py` holds one-off pages: cost calculator, quote worksheet, how it works, about, privacy, terms, contact, 404, thank-you.
+- Data lives in `_build/data/`: `existing.json`, `cities_a.json`, `cities_b.json`, `counties.json` (locations), `services.json`, `town_services.json` (town + service pages such as `/karns/roof-replacement/`, rendered by `town_service_page()`; a service only gets a `/{slug}/` link once it exists in `services.json`), `blog.json` (post metadata), `facts.json` (sourced Tennessee licensing/insurance/cost facts; `site_costs` feeds the calculator and cost tables).
+- Blog article bodies live in `_build/blog/<slug>.html`. To add a post: add the body file and an entry in `blog.json` (title up to 60 characters, description 120-160), then build. When you substantially update a post, set `modified` / `modified_label` in its `blog.json` entry. Posts end with a `<ul class="sources">` list of the sources they cite.
 - `index.html` is hand-written. Content between `<!-- shared:NAME -->` and `<!-- /shared:NAME -->` markers is overwritten by the build; edit everything else directly.
 - GitHub Pages doesn't publish folders starting with `_`, so `_build/` stays private.
+- After a deploy goes live, `python3 _build/indexnow.py` pings IndexNow (Bing and others) with every sitemap URL. The key file `a2eeeb20ea5663746f8fbba66eb45ac5.txt` at the site root must stay in place.
 
 ## Google Analytics + AdSense
 
