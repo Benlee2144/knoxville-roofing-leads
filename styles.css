@@ -127,9 +127,8 @@ body {
    ============================================= */
 
 .hero {
-    background: radial-gradient(circle at 85% 15%, rgba(255, 130, 0, 0.28), transparent 45%),
-                linear-gradient(135deg, rgba(22, 22, 22, 0.9) 0%, rgba(14, 14, 14, 0.95) 100%),
-                url('/images/hero-roof.webp') center/cover no-repeat;
+    background: linear-gradient(90deg, rgba(14, 14, 14, 0.88) 0%, rgba(14, 14, 14, 0.74) 42%, rgba(14, 14, 14, 0.38) 100%),
+                url('/images/knoxville-skyline.webp') center 35%/cover no-repeat;
     padding: 60px 0 80px;
     position: relative;
     overflow: hidden;
@@ -4364,9 +4363,9 @@ a.area-link:hover,
 
 @media (max-width: 768px) {
     .hero {
-        background-image: radial-gradient(circle at 85% 15%, rgba(255, 130, 0, 0.28), transparent 45%),
-                          linear-gradient(135deg, rgba(22, 22, 22, 0.9) 0%, rgba(14, 14, 14, 0.95) 100%),
-                          url('/images/hero-roof-800.webp');
+        background-image: linear-gradient(180deg, rgba(14, 14, 14, 0.8) 0%, rgba(14, 14, 14, 0.72) 100%),
+                          url('/images/knoxville-skyline-900.webp');
+        background-position: 30% center;
     }
 }
 
@@ -4685,4 +4684,146 @@ a.area-link:hover,
 
 .roofer-pin span {
     position: relative;
+}
+
+/* Header photo: no pattern or band over the skyline */
+.hero .hero-overlay {
+    display: none;
+}
+
+.hero::after {
+    content: none;
+}
+
+.hero {
+    padding-bottom: 80px;
+}
+
+.hero-title,
+.hero-subtitle,
+.hero-feature,
+.hero-phone {
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+
+/* =============================================
+   ROOFER NAME TICKER
+   ============================================= */
+
+.roofer-ticker {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    background: var(--charcoal);
+    border-top: 4px solid var(--orange);
+    overflow: hidden;
+}
+
+.ticker-label {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 22px;
+    background: var(--orange);
+    color: var(--charcoal);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.ticker-label .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.ticker-viewport {
+    flex: 1;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+}
+
+.ticker-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 16px 0;
+    animation: ticker-scroll 260s linear infinite;
+}
+
+.roofer-ticker:hover .ticker-track,
+.roofer-ticker:focus-within .ticker-track {
+    animation-play-state: paused;
+}
+
+.ticker-track a {
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.ticker-track a:hover {
+    color: var(--orange);
+}
+
+.ticker-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 22px;
+    background: var(--orange);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticker-viewport {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .ticker-label span {
+        display: none;
+    }
+
+    .ticker-label {
+        padding: 0 14px;
+    }
+}
+
+.ticker-run {
+    display: flex;
+    align-items: center;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-decoration: underline;
+}
+
+/* Desktop: put the Sunsphere in the gap between the headline and the form */
+@media (min-width: 993px) {
+    .hero {
+        background:
+            linear-gradient(90deg, rgba(14, 14, 14, 0.9) 0%, rgba(14, 14, 14, 0.8) 36%, rgba(14, 14, 14, 0.2) 50%, rgba(14, 14, 14, 0.5) 64%, rgba(14, 14, 14, 0.55) 100%),
+            #141414 url('/images/knoxville-skyline.webp') calc(50vw - 0.285 * max(2400px, 176vw)) 16% / max(2400px, 176vw) auto no-repeat;
+    }
 }

@@ -232,6 +232,32 @@ BADGE_SVG = '''<svg xmlns="http://www.w3.org/2000/svg" width="240" height="80" v
 '''
 
 
+def ticker(g, roofers):
+    """Scrolling strip of roofer names (names only; logos need each company's permission)."""
+    if not roofers:
+        return ''
+    esc, icon = g['esc'], g['icon']
+    from urllib.parse import quote
+    ordered = sorted(roofers, key=lambda r: hashlib.md5(r['name'].encode('utf-8')).hexdigest())
+    dot = '<span class="ticker-dot" aria-hidden="true"></span>'
+
+    def run(hidden):
+        attrs = ' tabindex="-1"' if hidden else ''
+        return dot.join(f'<a href="/roofers/?q={quote(r["name"])}"{attrs}>{esc(r["name"])}</a>' for r in ordered) + dot
+
+    return f'''    <!-- shared:ticker -->
+    <section class="roofer-ticker" aria-label="Roofing companies on our East Tennessee Roofer Map">
+        <a class="ticker-label" href="/roofers/">{icon('map-pin')}<span>{len(roofers)} local roofers on our map</span></a>
+        <div class="ticker-viewport">
+            <div class="ticker-track">
+                <div class="ticker-run">{run(False)}</div>
+                <div class="ticker-run" aria-hidden="true">{run(True)}</div>
+            </div>
+        </div>
+    </section>
+    <!-- /shared:ticker -->'''
+
+
 def build(g):
     roofers = load(g)
     with open(os.path.join(g['ROOT'], 'images', 'roofer-map-badge.svg'), 'w') as f:

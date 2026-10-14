@@ -277,6 +277,7 @@ def footer():
             </div>
             <div class="footer-bottom">
                 <p>&copy; {YEAR} {BRAND}. All rights reserved.</p>
+                <p class="footer-legal">Header photo: <a href="https://commons.wikimedia.org/wiki/File:Downtown_-_Knoxville,_Tennessee_-_April_19,_2014.jpg" rel="noopener" target="_blank">Downtown Knoxville</a> by David Ratledge, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener" target="_blank">CC BY 4.0</a>, cropped and color-adjusted.</p>
                 <p class="footer-legal">{BRAND} is a free referral service, not a roofing contractor. We may receive compensation from the independent contractors in our network. Always verify a contractor's license and insurance before hiring.</p>
             </div>
         </div>
@@ -1053,6 +1054,7 @@ def refresh_shared(rel_path, form_args=None, home=False):
         blocks['areas'] = areas_block()
         blocks['orgschema'] = jsonld(org_schema())
         blocks['floating'] = floating_cta()
+        blocks['ticker'] = RF.ticker(globals(), ROOFERS) if RF else ''
         blocks['herophone'] = hero_phone()
         blocks['costs'] = cost_snapshot('Knoxville', image='shingle-before-after',
                                         caption='Illustration: weathered, streaked shingles compared with new architectural shingles.')
