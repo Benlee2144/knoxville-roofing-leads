@@ -136,9 +136,11 @@
     "h1": "Metal Roof Pros and Cons: An Honest Breakdown",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 7,
+    "read_minutes": 5,
     "category": "Roofing Materials",
-    "service": "metal-roofing"
+    "service": "metal-roofing",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "new-construction-roofing",
@@ -147,9 +149,11 @@
     "h1": "New Construction Roofing: What Homebuyers Should Know",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 6,
+    "read_minutes": 5,
     "category": "Costs & Planning",
-    "service": "roof-replacement"
+    "service": "roof-replacement",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "questions-to-ask-roofing-contractor",
@@ -212,7 +216,9 @@
     "date": "2025-01-01",
     "read_minutes": 5,
     "category": "Maintenance & Repairs",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "roof-warranty-explained",
@@ -221,9 +227,11 @@
     "h1": "Roof Warranties Explained: What's Actually Covered",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 6,
+    "read_minutes": 4,
     "category": "Costs & Planning",
-    "service": "roof-replacement"
+    "service": "roof-replacement",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "roofing-scams-to-avoid",
@@ -232,9 +240,11 @@
     "h1": "7 Roofing Scams to Watch Out For",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 7,
+    "read_minutes": 6,
     "category": "Hiring a Roofer",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "shingle-colors-home-value",
@@ -243,9 +253,11 @@
     "h1": "Do Shingle Colors Affect Home Value?",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 5,
+    "read_minutes": 4,
     "category": "Costs & Planning",
-    "service": "roof-replacement"
+    "service": "roof-replacement",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "signs-you-need-new-roof",
@@ -254,9 +266,11 @@
     "h1": "8 Warning Signs You Need a New Roof",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 6,
+    "read_minutes": 5,
     "category": "Costs & Planning",
-    "service": "roof-replacement"
+    "service": "roof-replacement",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "skylight-leak-repair",
@@ -265,9 +279,11 @@
     "h1": "Why Your Skylight Leaks and How to Fix It",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 5,
+    "read_minutes": 4,
     "category": "Maintenance & Repairs",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "spring-roof-checklist",
@@ -276,9 +292,11 @@
     "h1": "Spring Roof Maintenance Checklist",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 4,
+    "read_minutes": 3,
     "category": "Maintenance & Repairs",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "storm-damage-insurance-claim",
@@ -300,9 +318,11 @@
     "h1": "Roof Leaking? What to Do Right Now",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 6,
+    "read_minutes": 5,
     "category": "Storm Damage & Insurance",
-    "service": "emergency-roof-repair"
+    "service": "emergency-roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "winter-roof-maintenance",
@@ -311,9 +331,11 @@
     "h1": "Winter Roof Maintenance Tips for Knoxville",
     "date_label": "January 2025",
     "date": "2025-01-01",
-    "read_minutes": 5,
+    "read_minutes": 4,
     "category": "Maintenance & Repairs",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "best-roofers-knoxville",
