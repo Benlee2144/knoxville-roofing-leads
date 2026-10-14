@@ -882,7 +882,7 @@ def town_service_page(d):
                 </div>
                 <div class="aside-card">
                     <h3>More in {esc(name)}</h3>
-                    <ul class="link-list">{siblings}<li><a href="/{town}/">Roofing in {esc(name)}</a></li><li><a href="/{svc}/">{esc(sname)} across East Tennessee</a></li></ul>
+                    <ul class="link-list">{siblings}<li><a href="/{town}/">Roofing in {esc(name)}</a></li>{f'<li><a href="/{svc}/">{esc(sname)} across East Tennessee</a></li>' if svc in SERVICE_DATA else ''}</ul>
                 </div>
                 <a href="#quote" class="btn-primary btn-block">Get {esc(name)} Quotes</a>
             </aside>'''
@@ -891,7 +891,7 @@ def town_service_page(d):
     nearby_html = f'''    <section class="nearby-section">
         <div class="container">
             <h2 class="nearby-title">{esc(sname)} in Nearby Towns</h2>
-            <div class="area-link-grid">{other_links}<a class="area-link" href="/{svc}/">{icon("map-pin")}All of East Tennessee</a></div>
+            <div class="area-link-grid">{other_links}{f'<a class="area-link" href="/{svc}/">{icon("map-pin")}All of East Tennessee</a>' if svc in SERVICE_DATA else ''}</div>
         </div>
     </section>'''
     costs = cost_snapshot(name) if svc == 'roof-replacement' else repair_costs_section(name)
