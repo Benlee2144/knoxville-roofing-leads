@@ -2126,6 +2126,16 @@ body {
     margin-top: 8px;
 }
 
+.prose ul.sources {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.prose ul.sources a {
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
 .prose a {
     color: var(--primary);
     font-weight: 600;

@@ -1022,7 +1022,8 @@ def blog_index_page():
 # High-intent guides: no display ads, so readers aren't sent to competitors' ads.
 NO_ADS = {'roof-replacement-cost-knoxville', 'storm-damage-insurance-claim', 'emergency-roof-tarp',
           'when-to-repair-leaking-roof', 'signs-you-need-new-roof', 'roof-repair-vs-replacement', 'hail-damage-what-to-know',
-          'best-roofers-knoxville'}
+          'best-roofers-knoxville', 'tennessee-roof-insurance-contract-rights', 'east-tennessee-hail-season',
+          'tennessee-roofing-contractor-license'}
 
 
 def blog_post(p):
