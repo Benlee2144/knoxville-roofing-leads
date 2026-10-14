@@ -8,7 +8,9 @@
     "date": "2025-01-01",
     "read_minutes": 6,
     "category": "Maintenance & Repairs",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "best-roofing-materials-tennessee",
@@ -19,7 +21,9 @@
     "date": "2025-01-01",
     "read_minutes": 8,
     "category": "Roofing Materials",
-    "service": "roof-replacement"
+    "service": "roof-replacement",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "chimney-flashing-repair",
@@ -140,7 +144,9 @@
     "date": "2025-01-01",
     "read_minutes": 8,
     "category": "Hiring a Roofer",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "roof-inspection-checklist",
@@ -151,7 +157,9 @@
     "date": "2025-01-01",
     "read_minutes": 6,
     "category": "Maintenance & Repairs",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "roof-repair-vs-replacement",
@@ -162,7 +170,9 @@
     "date": "2025-01-01",
     "read_minutes": 7,
     "category": "Costs & Planning",
-    "service": "roof-repair"
+    "service": "roof-repair",
+    "modified": "2026-10-14",
+    "modified_label": "October 2026"
   },
   {
     "slug": "roof-replacement-cost-knoxville",
