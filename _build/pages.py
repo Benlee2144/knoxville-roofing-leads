@@ -263,7 +263,7 @@ def build(g):
         </div>
     </section>'''
     simple_page('/about/', f'About Us | {brand}',
-                f'{brand} is a free roofing quote referral service for Knoxville and East Tennessee, run by {g["CONTACT_NAME"]}. How it works, how we make money and how we keep information honest.',
+                f'Who runs {brand}: a free roofing quote referral service for Knoxville and East Tennessee, run by {g["CONTACT_NAME"]}. How it works and how we make money.',
                 f'About {brand}', 'A free, honest way for East Tennessee homeowners to compare roofing quotes.', about,
                 schema=[{'@context': 'https://schema.org', '@type': 'AboutPage', 'name': f'About {brand}', 'url': site + '/about/'}])
 

@@ -191,9 +191,8 @@ def head(title, description, path, *, schema=(), og_type='website', noindex=Fals
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="/logo.svg">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/vendor/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/vendor/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/styles.css?v={VERSION}">''']
     if extra_head:
         parts.append(extra_head)
@@ -263,17 +262,17 @@ def footer():
                     <a href="/#quote" class="btn-primary">Get Free Quotes</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Roofing Services</h4>
+                    <h3>Roofing Services</h3>
 {services}
                 </div>
                 <div class="footer-col">
-                    <h4>Service Areas</h4>
+                    <h3>Service Areas</h3>
                     <a href="/">Knoxville</a>
 {counties}
                     <a href="/service-areas/">All service areas</a>
                 </div>
                 <div class="footer-col">
-                    <h4>Resources</h4>
+                    <h3>Resources</h3>
                     {'<a href="/roofers/">East Tennessee Roofer Map</a>' if ROOFERS else ''}
                     <a href="/roof-cost-calculator/">Roof Cost Calculator</a>
                     <a href="/compare-roofing-quotes/">Quote Comparison Worksheet</a>
